@@ -11,25 +11,35 @@ import logging
 import sys
 import requests
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
+import matplotlib.patches as mpatches  # (kept if you use it elsewhere)
 from pathlib import Path
 from datetime import datetime
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional
 from urllib.parse import quote, urlparse
 import time
 import numpy as np
+
+# ------------------------------
+# Global, category-agnostic constants (fairness controls)
+# ------------------------------
+TIMEOUT_MS = 45_000          # unified nav timeout (ms)
+EXTRA_WAIT_MS = 5_000        # unified post-load settle time (ms)
+MIN_SCREENSHOT_SIZE = 30_000 # unified visual completeness floor (bytes)
+MIN_DOM_ELEMENTS = 100       # unified minimal DOM complexity
+
+VIEWPORT = {'width': 1920, 'height': 1080}
 
 # Windows-specific asyncio configuration
 if sys.platform == 'win32':
     asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
 
-# Configure logging
+# Configure logging (ASCII-only to avoid cp1252 console errors)
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('rr_metric.log'),
-        logging.StreamHandler()
+        logging.FileHandler('rr_metric.log', encoding='utf-8'),
+        logging.StreamHandler(sys.stdout)
     ]
 )
 logger = logging.getLogger(__name__)
@@ -83,40 +93,37 @@ class ReplayabilityRatioAnalyzer:
         self.screenshots_dir.mkdir(parents=True, exist_ok=True)
         self.graphs_dir.mkdir(parents=True, exist_ok=True)
 
-        self.results = []
+        self.results: List[Dict] = []
         logger.info(f"RR Analyzer initialized. Output directory: {self.output_dir}")
 
     def get_wayback_url(self, url: str) -> Optional[str]:
         """
         Get the actual archived URL from Wayback Machine API.
+        Uses id_/ replay form for better self-contained playback.
         """
         try:
-            # Clean URL
             clean_url = url.strip()
             if not clean_url.startswith(('http://', 'https://')):
                 clean_url = 'http://' + clean_url
 
-            # Query Wayback Machine API for latest snapshot
             api_url = f"http://archive.org/wayback/available?url={quote(clean_url)}"
-
             response = requests.get(api_url, timeout=10)
             data = response.json()
 
-            # Check if archived snapshots exist
             if 'archived_snapshots' in data and 'closest' in data['archived_snapshots']:
                 snapshot = data['archived_snapshots']['closest']
                 if snapshot.get('available'):
                     archive_url = snapshot['url']
                     timestamp = snapshot.get('timestamp', 'unknown')
 
-                    # Use id_ format for better replay
-                    if '/web/' in archive_url and not archive_url.endswith('_/'):
+                    # Normalize to id_/ form
+                    if '/web/' in archive_url and 'id_/' not in archive_url:
                         parts = archive_url.split('/web/')
                         if len(parts) == 2:
-                            timestamp_and_url = parts[1]
-                            timestamp = timestamp_and_url.split('/')[0]
-                            original_url = '/'.join(timestamp_and_url.split('/')[1:])
-                            archive_url = f"http://web.archive.org/web/{timestamp}id_/{original_url}"
+                            ts_and_url = parts[1]
+                            ts = ts_and_url.split('/')[0]
+                            orig = '/'.join(ts_and_url.split('/')[1:])
+                            archive_url = f"http://web.archive.org/web/{ts}id_/{orig}"
 
                     logger.info(f"Found archive URL from {timestamp}: {archive_url}")
                     return archive_url
@@ -130,7 +137,7 @@ class ReplayabilityRatioAnalyzer:
 
     async def setup_browser(self):
         """
-        Set up Playwright browser instance with optimized settings for different website types.
+        Set up Playwright browser instance with neutral settings.
         """
         from playwright.async_api import async_playwright
 
@@ -149,27 +156,27 @@ class ReplayabilityRatioAnalyzer:
         )
 
         context = await browser.new_context(
-            viewport={'width': 1920, 'height': 1080},
+            viewport=VIEWPORT,
             ignore_https_errors=True,
             user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-            java_script_enabled=True  # Important for SPAs
+            java_script_enabled=True
         )
 
         return playwright, browser, context
 
     async def measure_replayability(self, url: str, archive_url: str, category: str, context) -> Dict:
         """
-        Measure the replayability of a single archived URL with category-specific handling.
+        Measure the replayability of a single archived URL using unified criteria.
         """
         result = {
             'url': url,
             'archive_url': archive_url,
             'category': category,
             'status_code': None,
-            'screenshot_size': 0,
-            'dom_elements': 0,
-            'load_time': 0,
-            'rr_score': 0.0,
+            'screenshot_size': None,
+            'dom_elements': None,
+            'load_time': None,
+            'rr_score': None,
             'error': None,
             'timestamp': datetime.now().isoformat()
         }
@@ -179,100 +186,91 @@ class ReplayabilityRatioAnalyzer:
 
         try:
             page = await context.new_page()
-
-            # Different timeouts for different categories
-            timeout_map = {
-                'html': 30000,   # 30 seconds for HTML
-                'spa': 60000,    # 60 seconds for SPAs (need more time for JS)
-                'social': 60000, # 60 seconds for social media
-                'api': 20000     # 20 seconds for APIs
-            }
-            page.set_default_timeout(timeout_map.get(category, 45000))
+            page.set_default_timeout(TIMEOUT_MS)
 
             logger.info(f"Loading {category.upper()} archived page: {archive_url}")
 
-            # Navigate with category-specific wait conditions
-            wait_until = 'networkidle' if category in ['spa', 'social'] else 'domcontentloaded'
-
+            # Neutral wait condition for all categories
             response = await page.goto(
                 archive_url,
-                wait_until=wait_until,
-                timeout=timeout_map.get(category, 45000)
+                wait_until='networkidle',
+                timeout=TIMEOUT_MS
             )
 
             if response:
-                result['status_code'] = response.status
+                try:
+                    result['status_code'] = response.status
+                except Exception:
+                    result['status_code'] = None
 
-                # Additional wait for JavaScript-heavy sites
-                if category in ['spa', 'social']:
-                    await page.wait_for_timeout(8000)  # Extra time for JS execution
-                else:
-                    await page.wait_for_timeout(3000)
+                # Post-load settle
+                await page.wait_for_timeout(EXTRA_WAIT_MS)
 
-                # Count DOM elements as a quality indicator
+                # DOM elements count
                 try:
                     dom_count = await page.evaluate('document.querySelectorAll("*").length')
-                    result['dom_elements'] = dom_count
-                except:
-                    result['dom_elements'] = 0
+                except Exception:
+                    dom_count = None
+                result['dom_elements'] = dom_count
 
-                # Record load time
-                result['load_time'] = time.time() - start_time
-
-                # Take screenshot
-                screenshot_name = f"{category}_{urlparse(url).netloc.replace('.', '_')}_{int(time.time())}.png"
-                screenshot_path = self.screenshots_dir / screenshot_name
-
-                await page.screenshot(
-                    path=str(screenshot_path),
-                    full_page=False,
-                    clip={'x': 0, 'y': 0, 'width': 1920, 'height': 1080}
-                )
-
-                # Check screenshot file size
-                if screenshot_path.exists():
-                    result['screenshot_size'] = screenshot_path.stat().st_size
-
-                    # Calculate RR score with category-specific thresholds
-                    min_screenshot_size = {
-                        'html': 10000,    # 10KB for HTML
-                        'spa': 50000,     # 50KB for SPAs (more complex)
-                        'social': 30000,  # 30KB for social
-                        'api': 5000       # 5KB for APIs (usually text)
-                    }
-
-                    min_dom_elements = {
-                        'html': 50,
-                        'spa': 100,
-                        'social': 75,
-                        'api': 10
-                    }
-
-                    threshold_size = min_screenshot_size.get(category, 10000)
-                    threshold_dom = min_dom_elements.get(category, 50)
-
-                    # Score calculation
-                    if (200 <= result['status_code'] < 300 and
-                        result['screenshot_size'] > threshold_size and
-                        result['dom_elements'] > threshold_dom):
-                        result['rr_score'] = 1.0
-                        logger.info(f"✓ {category.upper()} page successfully replayed: {url}")
+                # Load time (best-effort, may be None)
+                try:
+                    nav_start = await page.evaluate("performance.timing.navigationStart")
+                    dcl_end = await page.evaluate("performance.timing.domContentLoadedEventEnd")
+                    if isinstance(nav_start, (int, float)) and isinstance(dcl_end, (int, float)) and dcl_end >= nav_start:
+                        result['load_time'] = (dcl_end - nav_start) / 1000.0
                     else:
-                        # Partial score based on what worked
-                        partial_score = 0.0
-                        if 200 <= result['status_code'] < 300:
-                            partial_score += 0.3
-                        if result['screenshot_size'] > threshold_size:
-                            partial_score += 0.4
-                        if result['dom_elements'] > threshold_dom:
-                            partial_score += 0.3
-                        result['rr_score'] = partial_score
-                        logger.warning(f"⚠ {category.upper()} page partial replay: {url} (score: {partial_score:.2f})")
+                        result['load_time'] = time.time() - start_time
+                except Exception:
+                    result['load_time'] = time.time() - start_time
+
+                # Screenshot (clip to viewport for consistency)
+                try:
+                    screenshot_name = f"{category}_{urlparse(url).netloc.replace('.', '_')}_{int(time.time())}.png"
+                    screenshot_path = self.screenshots_dir / screenshot_name
+                    await page.screenshot(
+                        path=str(screenshot_path),
+                        full_page=False,
+                        clip={'x': 0, 'y': 0, 'width': VIEWPORT['width'], 'height': VIEWPORT['height']}
+                    )
+                    if screenshot_path.exists():
+                        result['screenshot_size'] = screenshot_path.stat().st_size
+                except Exception:
+                    result['screenshot_size'] = None
+
+                # RR score calculation (unified thresholds)
+                sc = result['status_code']
+                shot = result['screenshot_size']
+                domc = result['dom_elements']
+
+                # Only compute score if we have sufficient signals
+                if sc is not None and shot is not None and domc is not None:
+                    if (200 <= sc < 300) and (shot >= MIN_SCREENSHOT_SIZE) and (domc >= MIN_DOM_ELEMENTS):
+                        result['rr_score'] = 1.0
+                        logger.info(f"[OK] Page successfully replayed: {url}")
+                    else:
+                        # Partial credit: 0.3 (HTTP OK) + 0.4 (screenshot floor) + 0.3 (DOM floor)
+                        partial = 0.0
+                        if 200 <= sc < 300:
+                            partial += 0.3
+                        if shot >= MIN_SCREENSHOT_SIZE:
+                            partial += 0.4
+                        if domc >= MIN_DOM_ELEMENTS:
+                            partial += 0.3
+                        result['rr_score'] = round(partial, 3)
+                        logger.warning(f"[PARTIAL] {url} (score: {result['rr_score']:.2f})")
+                else:
+                    # Not enough signals to compute RR (treat as None)
+                    result['rr_score'] = None
+                    logger.warning(f"[NO-SCORE] Insufficient signals for {url}")
+
             else:
                 result['error'] = 'No response received'
+                result['rr_score'] = None
 
         except Exception as e:
             result['error'] = str(e)
+            result['rr_score'] = None
             logger.error(f"Error measuring {category} site {url}: {e}")
 
         finally:
@@ -304,20 +302,23 @@ class ReplayabilityRatioAnalyzer:
                 # Get actual wayback URL
                 archive_url = self.get_wayback_url(url)
                 if not archive_url:
+                    # Record as no-archive (None scores)
                     result = {
                         'url': url,
                         'archive_url': None,
                         'category': category,
                         'id': url_id,
                         'status_code': None,
-                        'screenshot_size': 0,
-                        'dom_elements': 0,
-                        'load_time': 0,
-                        'rr_score': 0.0,
+                        'screenshot_size': None,
+                        'dom_elements': None,
+                        'load_time': None,
+                        'rr_score': None,
                         'error': 'No archive available',
                         'timestamp': datetime.now().isoformat()
                     }
+                    logger.info(f"[NO-ARCHIVE] {url}")
                     self.results.append(result)
+                    self.save_results()
                     continue
 
                 # Measure replayability
@@ -327,7 +328,7 @@ class ReplayabilityRatioAnalyzer:
                 self.results.append(result)
                 self.save_results()
 
-                # Delay between requests
+                # Delay between requests (politeness)
                 await asyncio.sleep(2)
 
         finally:
@@ -348,6 +349,8 @@ class ReplayabilityRatioAnalyzer:
             'error', 'timestamp'
         ]
 
+        self.output_dir.mkdir(parents=True, exist_ok=True)
+
         with open(self.results_file, 'w', newline='', encoding='utf-8') as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
@@ -360,17 +363,17 @@ class ReplayabilityRatioAnalyzer:
         if not self.results:
             return {}
 
-        # Overall statistics
-        scores = [r['rr_score'] for r in self.results if r['rr_score'] is not None]
+        # Only scores that are actual numbers
+        numeric_scores = [r['rr_score'] for r in self.results if isinstance(r['rr_score'], (int, float))]
 
         stats = {
             'overall': {
                 'total_urls': len(self.results),
-                'successful_replays': sum(1 for s in scores if s >= 0.8),
-                'partial_replays': sum(1 for s in scores if 0.2 < s < 0.8),
-                'failed_replays': sum(1 for s in scores if s <= 0.2),
-                'average_rr': (sum(scores) / len(scores)) if scores else 0.0,
-                'success_rate': (sum(1 for s in scores if s >= 0.8) / len(scores) * 100) if scores else 0.0
+                'successful_replays': sum(1 for s in numeric_scores if s >= 0.8),
+                'partial_replays': sum(1 for s in numeric_scores if 0.2 < s < 0.8),
+                'failed_replays': sum(1 for s in numeric_scores if s <= 0.2),
+                'average_rr': (float(np.mean(numeric_scores)) if numeric_scores else 0.0),
+                'success_rate': (sum(1 for s in numeric_scores if s >= 0.8) / len(numeric_scores) * 100) if numeric_scores else 0.0
             },
             'by_category': {}
         }
@@ -379,22 +382,25 @@ class ReplayabilityRatioAnalyzer:
         categories = ['html', 'spa', 'social', 'api']
         for cat in categories:
             cat_results = [r for r in self.results if r.get('category') == cat]
-            cat_scores = [r['rr_score'] for r in cat_results if r['rr_score'] is not None]
+            cat_scores = [r['rr_score'] for r in cat_results if isinstance(r['rr_score'], (int, float))]
             count = len(cat_results)
             no_archive_count = sum(
                 1 for r in cat_results if (r.get('archive_url') is None or r.get('error') == 'No archive available')
             )
 
             if count > 0:
+                avg_load = np.mean([r['load_time'] for r in cat_results if isinstance(r.get('load_time'), (int, float))]) if count else 0.0
+                avg_dom = np.mean([r['dom_elements'] for r in cat_results if isinstance(r.get('dom_elements'), (int, float))]) if count else 0.0
+
                 stats['by_category'][cat] = {
                     'count': count,
                     'successful': sum(1 for s in cat_scores if s >= 0.8),
                     'partial': sum(1 for s in cat_scores if 0.2 < s < 0.8),
                     'failed': sum(1 for s in cat_scores if s <= 0.2),
-                    'average_rr': (sum(cat_scores) / len(cat_scores)) if cat_scores else 0.0,
+                    'average_rr': (float(np.mean(cat_scores)) if cat_scores else 0.0),
                     'success_rate': (sum(1 for s in cat_scores if s >= 0.8) / len(cat_scores) * 100) if cat_scores else 0.0,
-                    'avg_load_time': np.mean([r['load_time'] for r in cat_results if r['load_time'] > 0]) if count else 0.0,
-                    'avg_dom_elements': np.mean([r['dom_elements'] for r in cat_results if r['dom_elements'] > 0]) if count else 0.0,
+                    'avg_load_time': float(avg_load) if not np.isnan(avg_load) else 0.0,
+                    'avg_dom_elements': float(avg_dom) if not np.isnan(avg_dom) else 0.0,
                     'no_archive_count': no_archive_count
                 }
             else:
@@ -411,7 +417,7 @@ class ReplayabilityRatioAnalyzer:
                     'no_archive_count': 0
                 }
 
-        # Also track overall no-archive count (optional but handy)
+        # Also track overall no-archive count
         stats['overall']['no_archive_count'] = sum(
             1 for r in self.results if (r.get('archive_url') is None or r.get('error') == 'No archive available')
         )
@@ -453,10 +459,10 @@ class ReplayabilityRatioAnalyzer:
         failed = [stats['by_category'][cat]['failed'] for cat in categories]
 
         width = 0.6
-        p1 = ax2.bar(categories_upper, successful, width, label='Successful (≥0.8)', color='#4CAF50')
-        p2 = ax2.bar(categories_upper, partial, width, bottom=successful, label='Partial (0.2–0.8)', color='#FFC107')
-        p3 = ax2.bar(categories_upper, failed, width,
-                     bottom=[i+j for i, j in zip(successful, partial)], label='Failed (≤0.2)', color='#F44336')
+        ax2.bar(categories_upper, successful, width, label='Successful (>=0.8)', color='#4CAF50')
+        ax2.bar(categories_upper, partial, width, bottom=successful, label='Partial (0.2–0.8)', color='#FFC107')
+        ax2.bar(categories_upper, failed, width,
+                bottom=[i+j for i, j in zip(successful, partial)], label='Failed (<=0.2)', color='#F44336')
 
         ax2.set_ylabel('Number of Sites', fontweight='bold')
         ax2.set_title('Replay Quality Distribution by Category', fontweight='bold')
@@ -507,7 +513,7 @@ class ReplayabilityRatioAnalyzer:
         sizes = [overall['successful_replays'], overall['partial_replays'], overall['failed_replays']]
         labels = ['Successful', 'Partial', 'Failed']
         pie_colors = ['#4CAF50', '#FFC107', '#F44336']
-        explode = (0.1, 0, 0)  # Explode successful slice
+        explode = (0.1, 0, 0)
 
         if sum(sizes) > 0:
             wedges, texts, autotexts = ax6.pie(
@@ -529,7 +535,7 @@ class ReplayabilityRatioAnalyzer:
         plt.savefig(graph_path, dpi=300, bbox_inches='tight')
         logger.info(f"Comprehensive graph saved to {graph_path}")
 
-        # Detailed comparison table figure (now includes No Archive column)
+        # Detailed comparison table figure (includes No Archive column)
         fig2, ax = plt.subplots(figsize=(16, 8))
         ax.axis('tight')
         ax.axis('off')
@@ -549,7 +555,7 @@ class ReplayabilityRatioAnalyzer:
                 f"{cat_stats['success_rate']:.1f}%"
             ])
 
-        # Add overall row (with overall no-archive count)
+        # Add overall row
         table_data.append([
             'OVERALL',
             str(stats['overall']['total_urls']),
@@ -614,7 +620,8 @@ async def main():
         logger.info("Using default test URLs for different website categories")
         test_urls = DEFAULT_TEST_URLS
 
-        # Save default URLs to CSV for reference
+        # Save default URLs to CSV for reference (ensure dir exists)
+        urls_file.parent.mkdir(parents=True, exist_ok=True)
         with open(urls_file.parent / 'default_urls.csv', 'w', newline='', encoding='utf-8') as f:
             writer = csv.DictWriter(f, fieldnames=['url', 'category', 'id'])
             writer.writeheader()
@@ -645,17 +652,22 @@ async def main():
 
     # Overall results
     overall = stats['overall']
-    print(f"\n📊 OVERALL STATISTICS:")
+    print(f"\n[OVERALL]")
     print(f"  Total URLs analyzed: {overall['total_urls']}")
-    print(f"  Successful replays: {overall['successful_replays']} ({overall['successful_replays']/overall['total_urls']*100:.1f}%)" if overall['total_urls'] else "  Successful replays: 0 (0.0%)")
-    print(f"  Partial replays: {overall['partial_replays']} ({overall['partial_replays']/overall['total_urls']*100:.1f}%)" if overall['total_urls'] else "  Partial replays: 0 (0.0%)")
-    print(f"  Failed replays: {overall['failed_replays']} ({overall['failed_replays']/overall['total_urls']*100:.1f}%)" if overall['total_urls'] else "  Failed replays: 0 (0.0%)")
+    if overall['total_urls']:
+        print(f"  Successful replays: {overall['successful_replays']} ({overall['successful_replays']/overall['total_urls']*100:.1f}%)")
+        print(f"  Partial replays: {overall['partial_replays']} ({overall['partial_replays']/overall['total_urls']*100:.1f}%)")
+        print(f"  Failed replays: {overall['failed_replays']} ({overall['failed_replays']/overall['total_urls']*100:.1f}%)")
+    else:
+        print("  Successful replays: 0 (0.0%)")
+        print("  Partial replays: 0 (0.0%)")
+        print("  Failed replays: 0 (0.0%)")
     print(f"  No-archive cases: {overall.get('no_archive_count', 0)}")
     print(f"  Average RR Score: {overall['average_rr']:.3f}")
     print(f"  Overall Success Rate: {overall['success_rate']:.1f}%")
 
-    # Category-wise results (now includes no_archive_count)
-    print(f"\n📈 CATEGORY-WISE ANALYSIS:")
+    # Category-wise results (includes no_archive_count)
+    print(f"\n[CATEGORY-WISE]")
     for cat in ['html', 'spa', 'social', 'api']:
         cat_stats = stats['by_category'][cat]
         print(f"\n  {cat.upper()} Websites:")
@@ -668,11 +680,8 @@ async def main():
         print(f"    • Avg Load Time: {cat_stats['avg_load_time']:.1f} seconds")
         print(f"    • Avg DOM Elements: {int(cat_stats['avg_dom_elements']) if cat_stats['avg_dom_elements'] else 0}")
 
-    # Key findings based on dissertation objectives
-    print(f"\n🔍 KEY FINDINGS (aligned with dissertation objectives):")
-
-    # Find best and worst performing categories (by success rate)
-    # Guard against all-zero datasets
+    # Key findings
+    print(f"\n[KEY FINDINGS]")
     cat_items = list(stats['by_category'].items())
     if any(v['count'] > 0 for _, v in cat_items):
         best_cat = max(cat_items, key=lambda x: x[1]['success_rate'])
@@ -682,7 +691,7 @@ async def main():
     else:
         print("  1–2. Not enough data to determine best/worst categories.")
 
-    # SPA degradation vs HTML (as per dissertation hypothesis)
+    # SPA vs HTML
     if stats['by_category']['html']['count'] > 0 and stats['by_category']['spa']['count'] > 0:
         html_score = stats['by_category']['html']['average_rr']
         spa_score = stats['by_category']['spa']['average_rr']
@@ -701,10 +710,10 @@ async def main():
         json.dump(stats, f, indent=2)
 
     # Create visualizations
-    print(f"\n📊 Generating comprehensive visualizations...")
+    print(f"\nGenerating comprehensive visualizations...")
     analyzer.create_visualizations(stats)
 
-    print(f"\n💾 OUTPUT FILES SAVED:")
+    print(f"\nOUTPUT FILES SAVED:")
     print(f"  • Detailed results: {analyzer.results_file}")
     print(f"  • Statistics JSON: {stats_file}")
     print(f"  • Screenshots: {analyzer.screenshots_dir}")
@@ -716,9 +725,9 @@ async def main():
 
 
 if __name__ == "__main__":
-    # Install matplotlib if not present
+    # Ensure matplotlib is present
     try:
-        import matplotlib
+        import matplotlib  # noqa: F401
     except ImportError:
         print("Installing matplotlib for visualizations...")
         import subprocess

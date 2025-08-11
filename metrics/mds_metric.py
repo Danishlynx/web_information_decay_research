@@ -41,7 +41,7 @@ RESOURCE_WEIGHTS = {
     'other': 0.1
 }
 
-# Existing archive URLs (optional pre-load)
+# Fallback archive URLs (optional)
 ARCHIVE_URLS = {
     'https://www.w3.org': 'https://web.archive.org/web/20250806070354id_/https://www.w3.org/',
     'https://example.com': 'https://web.archive.org/web/20250809095118id_/https://example.com/',
@@ -91,7 +91,6 @@ class MementoDamageAnalyzer:
 
         page = None
         resources_data = []
-
         try:
             page = await context.new_page()
 
@@ -128,7 +127,8 @@ class MementoDamageAnalyzer:
 
             page.on('response', handle_response)
             page.on('requestfailed', handle_request_failed)
-            timeout = 30000 if category == 'html' else 45000
+
+            timeout = 45000  # Standardized timeout
             page.set_default_timeout(timeout)
 
             print(f"  Analyzing damage for {category.upper()}: {url}")
@@ -163,13 +163,6 @@ class MementoDamageAnalyzer:
                     'weight': RESOURCE_WEIGHTS.get(res_type, 0.1)
                 }
 
-            if result['mds_score'] < 0.2:
-                print(f"  [GOOD] Low damage: {result['mds_score']:.3f}")
-            elif result['mds_score'] < 0.5:
-                print(f"  [MEDIUM] Moderate damage: {result['mds_score']:.3f}")
-            else:
-                print(f"  [HIGH] High damage: {result['mds_score']:.3f}")
-
         except Exception as e:
             logger.error(f"Error: {e}")
         finally:
@@ -186,31 +179,37 @@ class MementoDamageAnalyzer:
                 category = url_data.get('category', 'unknown').lower()
                 print(f"\n[{idx}/{len(urls)}] Processing {url}")
 
-                archive_url = ARCHIVE_URLS.get(url)
-                if not archive_url:
-                    # Try Wayback API
+                archive_url = None
+                # Wayback API first
+                try:
                     import requests
                     from urllib.parse import quote
-                    try:
-                        api_url = f"https://archive.org/wayback/available?url={quote(url)}"
-                        resp = requests.get(api_url, timeout=10)
-                        data = resp.json()
-                        if 'archived_snapshots' in data and 'closest' in data['archived_snapshots']:
-                            archive_url = data['archived_snapshots']['closest']['url']
-                            if archive_url:
-                                archive_url = archive_url.replace('/http', 'id_/http')
-                                print(f"  Found archive: {archive_url[:80]}...")
-                    except:
-                        pass
+                    api_url = f"https://archive.org/wayback/available?url={quote(url)}"
+                    resp = requests.get(api_url, timeout=10)
+                    data = resp.json()
+                    if 'archived_snapshots' in data and 'closest' in data['archived_snapshots']:
+                        archive_url = data['archived_snapshots']['closest']['url']
+                        if archive_url:
+                            archive_url = archive_url.replace('/http', 'id_/http')
+                            print(f"  Found archive via API: {archive_url[:80]}...")
+                except:
+                    pass
 
+                # Fallback to hardcoded mapping
                 if not archive_url:
-                    print(f"  No archive found - recording full damage (1.0 MDS)")
+                    archive_url = ARCHIVE_URLS.get(url)
+                    if archive_url:
+                        print(f"  Using fallback archive: {archive_url[:80]}...")
+
+                # No archive = no data
+                if not archive_url:
+                    print(f"  No archive found - recording no-data (MDS=None)")
                     result = {
                         'url': url,
                         'category': category,
-                        'total_weight': 0.0,
-                        'damage_weight': 0.0,
-                        'mds_score': 1.0,
+                        'total_weight': None,
+                        'damage_weight': None,
+                        'mds_score': None,
                         'resource_breakdown': {},
                         'timestamp': datetime.now().isoformat(),
                         'note': 'No archive found'
@@ -219,7 +218,6 @@ class MementoDamageAnalyzer:
                     continue
 
                 result = await self.measure_damage(url, archive_url, category, context)
-                result['note'] = ''
                 self.results.append(result)
                 await asyncio.sleep(1)
 
@@ -255,12 +253,15 @@ class MementoDamageAnalyzer:
         stats = {}
         for cat in ['html', 'spa', 'social', 'api']:
             cat_results = [r for r in self.results if r['category'] == cat]
+            cat_scores = [r['mds_score'] for r in cat_results if r['mds_score'] is not None]
+            na_count = sum(1 for r in cat_results if r['mds_score'] is None)
             if cat_results:
                 stats[cat] = {
-                    'avg_mds': np.mean([r['mds_score'] for r in cat_results]),
-                    'min_mds': np.min([r['mds_score'] for r in cat_results]),
-                    'max_mds': np.max([r['mds_score'] for r in cat_results]),
-                    'count': len(cat_results)
+                    'avg_mds': np.mean(cat_scores) if cat_scores else None,
+                    'min_mds': np.min(cat_scores) if cat_scores else None,
+                    'max_mds': np.max(cat_scores) if cat_scores else None,
+                    'count': len(cat_scores),
+                    'no_data': na_count
                 }
 
         print("\n" + "="*60)
@@ -268,13 +269,17 @@ class MementoDamageAnalyzer:
         print("="*60)
         for cat, s in stats.items():
             print(f"\n{cat.upper()}:")
-            print(f"  Average MDS: {s['avg_mds']:.3f}")
-            print(f"  Range: {s['min_mds']:.3f} - {s['max_mds']:.3f}")
-            print(f"  Sites analyzed: {s['count']}")
+            print(f"  Sites with data: {s['count']}")
+            print(f"  No-archive (excluded): {s['no_data']}")
+            if s['count'] > 0:
+                print(f"  Average MDS: {s['avg_mds']:.3f}")
+                print(f"  Range: {s['min_mds']:.3f} - {s['max_mds']:.3f}")
+            else:
+                print("  (no measurable pages)")
 
-        if stats:
+        if any(s['count'] > 0 for s in stats.values()):
             fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
-            categories = list(stats.keys())
+            categories = [c for c in stats if stats[c]['count'] > 0]
             mds_scores = [stats[c]['avg_mds'] for c in categories]
             colors = ['green' if s < 0.3 else 'orange' if s < 0.6 else 'red' for s in mds_scores]
             bars = ax1.bar(categories, mds_scores, color=colors)
