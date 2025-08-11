@@ -14,10 +14,14 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches  # (kept if you use it elsewhere)
 from pathlib import Path
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 from urllib.parse import quote, urlparse
 import time
+import random
 import numpy as np
+
+from urllib3.util.retry import Retry
+from requests.adapters import HTTPAdapter
 
 # ------------------------------
 # Global, category-agnostic constants (fairness controls)
@@ -43,7 +47,6 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
-
 
 # Default test URLs categorized as per dissertation requirements
 DEFAULT_TEST_URLS = [
@@ -76,6 +79,38 @@ DEFAULT_TEST_URLS = [
     {'url': 'https://developer.spotify.com/web-api', 'category': 'api', 'id': 'api_5'},
 ]
 
+# Candidate fallback paths to probe when apex has no snapshot
+CANDIDATE_PATHS = ['/', '/index.html', '/news', '/about', '/en', '/home']
+
+
+def make_session() -> requests.Session:
+    retry = Retry(
+        total=6,
+        connect=4,
+        read=4,
+        backoff_factor=0.7,
+        status_forcelist=(429, 500, 502, 503, 504),
+        allowed_methods=frozenset(['GET'])
+    )
+    s = requests.Session()
+    s.headers.update({
+        'User-Agent': 'RR-Analyzer/1.0 (+https://example.org)',
+        'Accept': 'application/json'
+    })
+    s.mount('https://', HTTPAdapter(max_retries=retry))
+    s.mount('http://', HTTPAdapter(max_retries=retry))
+    return s
+
+
+def normalize_for_archive(u: str) -> str:
+    """Normalize a URL to increase Wayback hit rate (ensure scheme, trailing slash for apex)."""
+    if not u.startswith(('http://', 'https://')):
+        u = 'https://' + u
+    parsed = urlparse(u)
+    if parsed.path in ('',):
+        return f"{parsed.scheme}://{parsed.netloc}/"
+    return u
+
 
 class ReplayabilityRatioAnalyzer:
     """
@@ -94,46 +129,109 @@ class ReplayabilityRatioAnalyzer:
         self.graphs_dir.mkdir(parents=True, exist_ok=True)
 
         self.results: List[Dict] = []
+        self.session = make_session()
         logger.info(f"RR Analyzer initialized. Output directory: {self.output_dir}")
 
-    def get_wayback_url(self, url: str) -> Optional[str]:
+    def _resolve_via_available(self, url: str) -> Tuple[Optional[str], Optional[str], Optional[str]]:
+        """Try the Wayback 'available' API first. Returns (archive_url, timestamp, reason)."""
+        api = f"https://web.archive.org/wayback/available?url={quote(url)}"
+        try:
+            resp = self.session.get(api, timeout=30)
+            if resp.status_code == 429:
+                return None, None, 'http-429'
+            if not resp.ok:
+                return None, None, f'http-{resp.status_code}'
+            data = resp.json()
+            snap = data.get('archived_snapshots', {}).get('closest')
+            if snap and snap.get('available'):
+                archive_url = snap['url']
+                ts = snap.get('timestamp', 'unknown')
+                # Normalize to id_/ form
+                if '/web/' in archive_url and 'id_/' not in archive_url:
+                    parts = archive_url.split('/web/')
+                    ts_and_url = parts[1]
+                    ts2 = ts_and_url.split('/')[0]
+                    orig = '/'.join(ts_and_url.split('/')[1:])
+                    archive_url = f"https://web.archive.org/web/{ts2}id_/{orig}"
+                    ts = ts2
+                return archive_url, ts, None
+            return None, None, 'no-snapshots'
+        except requests.Timeout:
+            return None, None, 'timeout'
+        except Exception as e:
+            return None, None, f'error:{e.__class__.__name__}'
+
+    def _resolve_via_cdx(self, url: str) -> Tuple[Optional[str], Optional[str], Optional[str]]:
+        """Fallback to CDX API looking for newest 200 snapshot."""
+        cdx = (
+            f"https://web.archive.org/cdx/search/cdx?"
+            f"url={quote(url)}&output=json&filter=statuscode:200&limit=1&fl=timestamp,original"
+            f"&from=1996&to=2099&collapse=digest"
+        )
+        try:
+            resp = self.session.get(cdx, timeout=30)
+            if resp.status_code == 429:
+                return None, None, 'http-429'
+            if not resp.ok:
+                return None, None, f'http-{resp.status_code}'
+            rows = resp.json()
+            if isinstance(rows, list) and len(rows) > 1:
+                ts, orig = rows[1][0], rows[1][1]
+                archive_url = f"https://web.archive.org/web/{ts}id_/{orig}"
+                return archive_url, ts, None
+            return None, None, 'no-cdx-rows'
+        except requests.Timeout:
+            return None, None, 'timeout'
+        except Exception as e:
+            return None, None, f'error:{e.__class__.__name__}'
+
+    def get_wayback_url(self, url: str) -> Tuple[Optional[str], Optional[str]]:
         """
-        Get the actual archived URL from Wayback Machine API.
-        Uses id_/ replay form for better self-contained playback.
+        Get the actual archived URL from Wayback Machine API (HTTPS) with CDX fallback.
+        Returns (archive_url, reason_if_none).
         """
         try:
-            clean_url = url.strip()
-            if not clean_url.startswith(('http://', 'https://')):
-                clean_url = 'http://' + clean_url
+            base = normalize_for_archive(url)
 
-            api_url = f"http://archive.org/wayback/available?url={quote(clean_url)}"
-            response = requests.get(api_url, timeout=10)
-            data = response.json()
+            # Small jitter to avoid API bursts
+            time.sleep(0.25 + random.random() * 0.5)
 
-            if 'archived_snapshots' in data and 'closest' in data['archived_snapshots']:
-                snapshot = data['archived_snapshots']['closest']
-                if snapshot.get('available'):
-                    archive_url = snapshot['url']
-                    timestamp = snapshot.get('timestamp', 'unknown')
+            # 1) available API
+            archive_url, ts, reason = self._resolve_via_available(base)
+            if archive_url:
+                logger.info(f"Found archive via available API from {ts}: {archive_url}")
+                return archive_url, None
 
-                    # Normalize to id_/ form
-                    if '/web/' in archive_url and 'id_/' not in archive_url:
-                        parts = archive_url.split('/web/')
-                        if len(parts) == 2:
-                            ts_and_url = parts[1]
-                            ts = ts_and_url.split('/')[0]
-                            orig = '/'.join(ts_and_url.split('/')[1:])
-                            archive_url = f"http://web.archive.org/web/{ts}id_/{orig}"
+            # If apex failed and no snapshots, try a few common paths
+            if reason in ('no-snapshots', 'no-cdx-rows'):
+                for p in CANDIDATE_PATHS:
+                    candidate = f"{urlparse(base).scheme}://{urlparse(base).netloc}{p}"
+                    time.sleep(0.2 + random.random() * 0.4)
+                    archive_url, ts, reason2 = self._resolve_via_available(candidate)
+                    if archive_url:
+                        logger.info(f"Found archive via candidate path {p} from {ts}: {archive_url}")
+                        return archive_url, None
 
-                    logger.info(f"Found archive URL from {timestamp}: {archive_url}")
-                    return archive_url
+            # 2) CDX fallback on base
+            archive_url, ts, reason2 = self._resolve_via_cdx(base)
+            if archive_url:
+                logger.info(f"CDX fallback archive from {ts}: {archive_url}")
+                return archive_url, None
 
-            logger.warning(f"No archive found for {url}")
-            return None
+            # 2b) CDX fallback on candidates
+            for p in CANDIDATE_PATHS:
+                candidate = f"{urlparse(base).scheme}://{urlparse(base).netloc}{p}"
+                time.sleep(0.2 + random.random() * 0.4)
+                archive_url, ts, reason3 = self._resolve_via_cdx(candidate)
+                if archive_url:
+                    logger.info(f"CDX fallback archive via candidate {p} from {ts}: {archive_url}")
+                    return archive_url, None
 
+            logger.warning(f"No archive found for {url} (reason: {reason or reason2})")
+            return None, (reason or reason2 or 'unknown')
         except Exception as e:
             logger.error(f"Failed to get archive URL for {url}: {e}")
-            return None
+            return None, f'error:{e.__class__.__name__}'
 
     async def setup_browser(self):
         """
@@ -159,7 +257,11 @@ class ReplayabilityRatioAnalyzer:
             viewport=VIEWPORT,
             ignore_https_errors=True,
             user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-            java_script_enabled=True
+            java_script_enabled=True,
+            extra_http_headers={
+                # Prevent gzip/deflate to dodge ERR_CONTENT_DECODING_FAILED on some Wayback replays
+                'Accept-Encoding': 'identity'
+            }
         )
 
         return playwright, browser, context
@@ -253,23 +355,24 @@ class ReplayabilityRatioAnalyzer:
                         partial = 0.0
                         if 200 <= sc < 300:
                             partial += 0.3
-                        if shot >= MIN_SCREENSHOT_SIZE:
+                        if isinstance(shot, int) and shot >= MIN_SCREENSHOT_SIZE:
                             partial += 0.4
-                        if domc >= MIN_DOM_ELEMENTS:
+                        if isinstance(domc, int) and domc >= MIN_DOM_ELEMENTS:
                             partial += 0.3
                         result['rr_score'] = round(partial, 3)
                         logger.warning(f"[PARTIAL] {url} (score: {result['rr_score']:.2f})")
                 else:
                     # Not enough signals to compute RR (treat as None)
                     result['rr_score'] = None
+                    result['error'] = result.get('error') or 'insufficient-signals'
                     logger.warning(f"[NO-SCORE] Insufficient signals for {url}")
 
             else:
-                result['error'] = 'No response received'
+                result['error'] = 'no-response'
                 result['rr_score'] = None
 
         except Exception as e:
-            result['error'] = str(e)
+            result['error'] = f'playback-error:{e.__class__.__name__}'
             result['rr_score'] = None
             logger.error(f"Error measuring {category} site {url}: {e}")
 
@@ -300,7 +403,7 @@ class ReplayabilityRatioAnalyzer:
                 print(f"\n[{idx}/{len(urls)}] Processing {category.upper()}: {url}")
 
                 # Get actual wayback URL
-                archive_url = self.get_wayback_url(url)
+                archive_url, reason = self.get_wayback_url(url)
                 if not archive_url:
                     # Record as no-archive (None scores)
                     result = {
@@ -313,10 +416,10 @@ class ReplayabilityRatioAnalyzer:
                         'dom_elements': None,
                         'load_time': None,
                         'rr_score': None,
-                        'error': 'No archive available',
+                        'error': f'no-archive:{reason or "unknown"}',
                         'timestamp': datetime.now().isoformat()
                     }
-                    logger.info(f"[NO-ARCHIVE] {url}")
+                    logger.info(f"[NO-ARCHIVE] {url} (reason: {reason})")
                     self.results.append(result)
                     self.save_results()
                     continue
@@ -329,7 +432,7 @@ class ReplayabilityRatioAnalyzer:
                 self.save_results()
 
                 # Delay between requests (politeness)
-                await asyncio.sleep(2)
+                await asyncio.sleep(2 + random.random()*0.5)
 
         finally:
             await context.close()
@@ -385,7 +488,7 @@ class ReplayabilityRatioAnalyzer:
             cat_scores = [r['rr_score'] for r in cat_results if isinstance(r['rr_score'], (int, float))]
             count = len(cat_results)
             no_archive_count = sum(
-                1 for r in cat_results if (r.get('archive_url') is None or r.get('error') == 'No archive available')
+                1 for r in cat_results if (r.get('archive_url') is None or (r.get('error') or '').startswith('no-archive:'))
             )
 
             if count > 0:
@@ -419,7 +522,7 @@ class ReplayabilityRatioAnalyzer:
 
         # Also track overall no-archive count
         stats['overall']['no_archive_count'] = sum(
-            1 for r in self.results if (r.get('archive_url') is None or r.get('error') == 'No archive available')
+            1 for r in self.results if (r.get('archive_url') is None or (r.get('error') or '').startswith('no-archive:'))
         )
 
         return stats
@@ -481,7 +584,7 @@ class ReplayabilityRatioAnalyzer:
         for bar, score in zip(bars, avg_scores):
             height = bar.get_height()
             ax3.text(bar.get_x() + bar.get_width()/2., height + 0.01,
-                     f'{score:.3f}', ha='center', va='bottom', fontweight='bold')
+                f'{score:.3f}', ha='center', va='bottom', fontweight='bold')
 
         # 4. Load Time Comparison
         ax4 = plt.subplot(2, 3, 4)
