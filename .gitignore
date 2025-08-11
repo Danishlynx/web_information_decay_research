@@ -17,6 +17,11 @@ outputs/
 screenshots/
 graphs/
 
+# Allow CSV and JSON files inside data/ to be tracked
+!data/
+!data/*.csv
+!data/*.json
+
 # IDE
 .vscode/
 .idea/
