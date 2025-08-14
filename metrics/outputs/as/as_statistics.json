@@ -1,0 +1,50 @@
+{
+  "stats": {
+    "api": {
+      "avg_as_score": 0.5396649995342967,
+      "avg_span_days": 2297.753424657534,
+      "avg_captures": 274.26027397260276,
+      "avg_frequency": 31.60652693006047,
+      "count": 73
+    },
+    "html": {
+      "avg_as_score": 0.9374644521945121,
+      "avg_span_days": 8258.344680851063,
+      "avg_captures": 3350.68085106383,
+      "avg_frequency": 139.85741722899348,
+      "count": 235
+    },
+    "social": {
+      "avg_as_score": 0.8897496554623119,
+      "avg_span_days": 6779.3644859813085,
+      "avg_captures": 2247.696261682243,
+      "avg_frequency": 116.21856223963262,
+      "count": 214
+    },
+    "spa": {
+      "avg_as_score": 0.8741422037156446,
+      "avg_span_days": 6222.982062780269,
+      "avg_captures": 1483.0269058295964,
+      "avg_frequency": 90.91132635675636,
+      "count": 223
+    }
+  },
+  "error_rates": {
+    "api": {
+      "total": 250,
+      "errors": 177
+    },
+    "html": {
+      "total": 250,
+      "errors": 15
+    },
+    "social": {
+      "total": 250,
+      "errors": 36
+    },
+    "spa": {
+      "total": 250,
+      "errors": 27
+    }
+  }
+}

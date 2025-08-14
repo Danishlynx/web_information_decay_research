@@ -1,0 +1,34 @@
+{
+  "api": {
+    "avg_mds": 0.2925013516879049,
+    "min_mds": 0.0,
+    "max_mds": 1.0,
+    "count": 45,
+    "no_data": 205,
+    "weighted_mean_mds": 0.6437667560321714
+  },
+  "html": {
+    "avg_mds": 0.6995099690063052,
+    "min_mds": 0.0,
+    "max_mds": 1.0,
+    "count": 151,
+    "no_data": 99,
+    "weighted_mean_mds": 0.9037877742514143
+  },
+  "social": {
+    "avg_mds": 0.7890006662332363,
+    "min_mds": 0.0,
+    "max_mds": 1.0,
+    "count": 159,
+    "no_data": 91,
+    "weighted_mean_mds": 0.9550477665892072
+  },
+  "spa": {
+    "avg_mds": 0.732739672931672,
+    "min_mds": 0.0,
+    "max_mds": 1.0,
+    "count": 164,
+    "no_data": 86,
+    "weighted_mean_mds": 0.9529282844271275
+  }
+}

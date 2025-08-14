@@ -1,0 +1,1001 @@
+url,category,mds_score,total_weight,damage_weight,timestamp,note
+https://www.w3.org,html,1.0,1.0,1.0,2025-08-13T12:16:11.677683,
+https://example.com,html,0.0,1.0,0.0,2025-08-13T12:16:57.857479,
+https://www.wikipedia.org,html,0.3333333333333333,1.5,0.5,2025-08-13T12:17:44.713800,
+https://www.archive.org,html,,,,2025-08-13T12:18:28.796132,No archive found
+https://www.bbc.com/news,html,0.9828178694158075,58.19999999999997,57.19999999999997,2025-08-13T12:18:39.452886,
+https://www.nytimes.com,html,,,,2025-08-13T12:19:13.117732,Likely excluded via robots
+https://www.theguardian.com,html,,,,2025-08-13T12:19:20.727924,Likely excluded via robots
+https://www.reuters.com,html,0.927007299270073,13.700000000000005,12.700000000000005,2025-08-13T12:19:23.776255,
+https://www.apache.org,html,0.6153846153846154,2.6,1.6,2025-08-13T12:20:14.544678,
+https://www.python.org,html,,,,2025-08-13T12:21:25.269553,No archive found
+https://www.php.net,html,0.9280575539568345,13.900000000000004,12.900000000000004,2025-08-13T12:21:29.078927,
+https://www.perl.org,html,,,,2025-08-13T12:22:16.613321,No archive found
+https://www.ruby-lang.org,html,,,,2025-08-13T12:22:46.862793,No archive found
+https://www.golang.org,html,0.7727272727272729,4.3999999999999995,3.4000000000000004,2025-08-13T12:22:59.546443,
+https://www.rust-lang.org,html,,,,2025-08-13T12:24:17.402150,No archive found
+https://www.mozilla.org,html,,,,2025-08-13T12:24:50.596407,No archive found
+https://www.gnu.org,html,,,,2025-08-13T12:25:29.809883,No archive found
+https://www.kernel.org,html,0.8148148148148149,5.4,4.4,2025-08-13T12:25:59.052043,
+https://www.debian.org,html,,,,2025-08-13T12:26:52.936134,No archive found
+https://www.ubuntu.com,html,0.9745547073791349,39.29999999999999,38.29999999999999,2025-08-13T12:27:23.758233,
+https://www.redhat.com,html,,,,2025-08-13T12:28:30.835205,No archive found
+https://www.centos.org,html,0.9683544303797469,31.6,30.6,2025-08-13T12:28:34.035200,
+https://www.opensuse.org,html,0.5833333333333334,2.4,1.4,2025-08-13T12:28:44.781445,
+https://www.archlinux.org,html,,,,2025-08-13T12:29:39.372379,No archive found
+https://www.gentoo.org,html,0.8305084745762712,5.8999999999999995,4.8999999999999995,2025-08-13T12:29:47.753513,
+https://www.freebsd.org,html,,,,2025-08-13T12:30:49.870071,No archive found
+https://www.openbsd.org,html,0.0,1.0,0.0,2025-08-13T12:30:52.604494,
+https://www.netbsd.org,html,,,,2025-08-13T12:31:30.798754,No archive found
+https://www.postgresql.org,html,,,,2025-08-13T12:31:59.392987,No archive found
+https://www.mysql.com,html,,,,2025-08-13T12:32:25.633709,No archive found
+https://www.mariadb.org,html,,,,2025-08-13T12:32:56.899236,No archive found
+https://www.sqlite.org,html,0.0,1.0,0.0,2025-08-13T12:33:11.770717,
+https://www.mongodb.com,html,0.9824,62.499999999999915,61.39999999999992,2025-08-13T12:33:40.959009,
+https://www.elastic.co,html,0.9628252788104089,26.900000000000002,25.900000000000002,2025-08-13T12:34:10.597737,
+https://www.apache.org/foundation,html,0.6153846153846154,2.6,1.6,2025-08-13T12:35:09.107321,
+https://www.fsf.org,html,0.9328859060402684,14.9,13.9,2025-08-13T12:36:10.522831,
+https://www.eff.org,html,,,,2025-08-13T12:36:49.139591,No archive found
+https://www.creativecommons.org,html,,,,2025-08-13T12:37:20.340013,No archive found
+https://www.opensource.org,html,,,,2025-08-13T12:37:45.904397,No archive found
+https://www.mit.edu,html,,,,2025-08-13T12:38:12.763318,No archive found
+https://www.stanford.edu,html,0.963898916967509,27.700000000000006,26.700000000000003,2025-08-13T12:38:34.165510,
+https://www.harvard.edu,html,,,,2025-08-13T12:39:31.460726,No archive found
+https://www.yale.edu,html,0.9598393574297189,24.90000000000001,23.90000000000001,2025-08-13T12:39:33.480017,
+https://www.princeton.edu,html,,,,2025-08-13T12:40:50.590105,No archive found
+https://www.columbia.edu,html,0.9358974358974359,15.6,14.6,2025-08-13T12:40:54.337172,
+https://www.cornell.edu,html,,,,2025-08-13T12:42:09.577185,No archive found
+https://www.upenn.edu,html,,,,2025-08-13T12:42:40.690299,No archive found
+https://www.brown.edu,html,0.6296296296296297,2.7,1.7000000000000002,2025-08-13T12:43:07.694438,
+https://www.dartmouth.edu,html,,,,2025-08-13T12:43:56.339865,No archive found
+https://www.oxford.ac.uk,html,,,,2025-08-13T12:44:24.950688,No archive found
+https://www.cambridge.org,html,,,,2025-08-13T12:44:47.199858,No archive found
+https://www.ed.ac.uk,html,0.6153846153846154,2.6,1.6,2025-08-13T12:45:04.004771,
+https://www.imperial.ac.uk,html,0.8913043478260869,9.2,8.2,2025-08-13T12:45:48.111755,
+https://www.lse.ac.uk,html,,,,2025-08-13T12:46:44.403470,No archive found
+https://www.ucl.ac.uk,html,,,,2025-08-13T12:47:06.550077,No archive found
+https://www.kcl.ac.uk,html,,,,2025-08-13T12:47:31.684555,No archive found
+https://www.manchester.ac.uk,html,0.9382716049382718,16.200000000000003,15.200000000000005,2025-08-13T12:47:32.557274,
+https://www.bristol.ac.uk,html,0.4444444444444445,1.8,0.8,2025-08-13T12:48:00.985301,
+https://www.warwick.ac.uk,html,0.9615384615384615,26.000000000000007,25.000000000000004,2025-08-13T12:48:53.733844,
+https://www.york.ac.uk,html,,,,2025-08-13T12:49:31.503149,No archive found
+https://www.nature.com,html,,,,2025-08-13T12:49:53.794639,No archive found
+https://www.science.org,html,,,,2025-08-13T12:50:25.955161,No archive found
+https://www.cell.com,html,,,,2025-08-13T12:50:57.780147,No archive found
+https://www.thelancet.com,html,0.7115384615384615,10.4,7.3999999999999995,2025-08-13T12:51:06.916596,
+https://www.nejm.org,html,0.8863636363636362,8.8,7.8,2025-08-13T12:51:53.889904,
+https://www.bmj.com,html,,,,2025-08-13T12:53:02.998503,No archive found
+https://www.plos.org,html,0.9650793650793651,31.500000000000018,30.400000000000016,2025-08-13T12:53:11.103930,
+https://www.ieee.org,html,,,,2025-08-13T12:53:50.132234,No archive found
+https://www.acm.org,html,,,,2025-08-13T12:54:20.014168,No archive found
+https://www.ams.org,html,0.6875,3.2,2.2,2025-08-13T12:54:32.882370,
+https://www.rsc.org,html,,,,2025-08-13T12:55:18.192381,No archive found
+https://www.acs.org,html,0.8181818181818182,5.5,4.5,2025-08-13T12:55:31.183462,
+https://www.iop.org,html,0.0,1.0,0.0,2025-08-13T12:56:36.463553,
+https://www.aps.org,html,,,,2025-08-13T12:57:59.675076,No archive found
+https://www.nasa.gov,html,0.980544747081712,51.39999999999998,50.39999999999998,2025-08-13T12:58:13.648700,
+https://www.esa.int,html,0.6153846153846154,2.6,1.6,2025-08-13T12:58:40.712384,
+https://www.jaxa.jp,html,0.6428571428571429,2.8,1.8,2025-08-13T12:59:10.823821,
+https://www.isro.gov.in,html,,,,2025-08-13T13:00:36.118949,No archive found
+https://www.roscosmos.ru,html,0.0,1.0,0.0,2025-08-13T13:00:55.639603,
+https://www.spacex.com,html,0.0,1.0,0.0,2025-08-13T13:01:59.743041,
+https://www.blueorigin.com,html,,,,2025-08-13T13:02:49.596532,No archive found
+https://www.virgingalactic.com,html,0.6153846153846154,2.6,1.6,2025-08-13T13:03:08.088757,
+https://www.who.int,html,,,,2025-08-13T13:04:16.235155,No archive found
+https://www.cdc.gov,html,,,,2025-08-13T13:04:59.554390,No archive found
+https://www.nih.gov,html,0.7619047619047619,4.2,3.2,2025-08-13T13:05:03.672101,
+https://www.fda.gov,html,,,,2025-08-13T13:06:11.898844,No archive found
+https://www.epa.gov,html,,,,2025-08-13T13:06:46.374422,No archive found
+https://www.noaa.gov,html,,,,2025-08-13T13:07:18.671806,No archive found
+https://www.usgs.gov,html,0.6296296296296297,2.7,1.7000000000000002,2025-08-13T13:07:39.218576,
+https://www.loc.gov,html,,,,2025-08-13T13:08:52.374476,No archive found
+https://www.archives.gov,html,0.9710982658959539,34.59999999999998,33.59999999999999,2025-08-13T13:09:14.538448,
+https://www.si.edu,html,0.7435897435897436,7.8,5.8,2025-08-13T13:09:57.432327,
+https://www.whitehouse.gov,html,0.9746835443037974,39.49999999999996,38.49999999999996,2025-08-13T13:10:49.228747,
+https://www.senate.gov,html,0.4444444444444445,1.8,0.8,2025-08-13T13:11:11.327067,
+https://www.house.gov,html,0.4444444444444445,1.8,0.8,2025-08-13T13:12:25.538258,
+https://www.supremecourt.gov,html,0.6153846153846154,2.6,1.6,2025-08-13T13:12:59.417288,
+https://www.state.gov,html,,,,2025-08-13T13:14:07.934265,No archive found
+https://www.treasury.gov,html,0.0,1.0,0.0,2025-08-13T13:14:16.035937,
+https://www.defense.gov,html,0.8809523809523809,8.4,7.4,2025-08-13T13:14:42.829679,
+https://www.justice.gov,html,,,,2025-08-13T13:16:08.871681,No archive found
+https://www.usda.gov,html,0.7058823529411765,3.4000000000000004,2.4000000000000004,2025-08-13T13:16:12.089508,
+https://www.commerce.gov,html,0.7872340425531915,4.7,3.7,2025-08-13T13:17:27.980822,
+https://www.labor.gov,html,0.868421052631579,7.6,6.6,2025-08-13T13:18:20.279824,
+https://www.hhs.gov,html,,,,2025-08-13T13:19:09.965288,No archive found
+https://www.hud.gov,html,0.8571428571428571,7.0,6.0,2025-08-13T13:19:12.144811,
+https://www.transportation.gov,html,1.0,1.0,1.0,2025-08-13T13:19:56.638864,
+https://www.energy.gov,html,0.4444444444444445,1.8,0.8,2025-08-13T13:20:34.251068,
+https://www.education.gov,html,0.782608695652174,4.6,3.6,2025-08-13T13:21:32.149144,
+https://www.va.gov,html,0.9290780141843971,14.100000000000003,13.100000000000001,2025-08-13T13:22:30.520238,
+https://www.dhs.gov,html,,,,2025-08-13T13:23:22.430022,No archive found
+https://www.un.org,html,,,,2025-08-13T13:23:54.222920,No archive found
+https://www.unesco.org,html,0.0,1.0,0.0,2025-08-13T13:24:03.344186,
+https://www.unicef.org,html,0.8765432098765432,8.1,7.1,2025-08-13T13:24:45.136450,
+https://www.undp.org,html,,,,2025-08-13T13:26:04.433874,No archive found
+https://www.worldbank.org,html,,,,2025-08-13T13:26:44.951169,No archive found
+https://www.imf.org,html,0.16666666666666669,4.8,0.8,2025-08-13T13:27:01.620239,
+https://www.wto.org,html,,,,2025-08-13T13:28:17.927617,No archive found
+https://www.oecd.org,html,0.8181818181818182,5.5,4.5,2025-08-13T13:28:20.905268,
+https://www.europa.eu,html,0.04264705882352942,67.99999999999999,2.9,2025-08-13T13:29:00.427437,
+https://www.ecb.europa.eu,html,0.5833333333333334,2.4,1.4,2025-08-13T13:29:19.448244,
+https://www.cnn.com,html,0.9852724594992637,67.89999999999999,66.89999999999999,2025-08-13T13:29:59.350691,
+https://www.foxnews.com,html,0.9910873440285205,112.2,111.2,2025-08-13T13:30:21.551358,
+https://www.msnbc.com,html,0.9909338168631006,110.29999999999997,109.29999999999995,2025-08-13T13:30:53.293942,
+https://www.cbsnews.com,html,,,,2025-08-13T13:31:50.149700,Likely excluded via robots
+https://www.abcnews.go.com,html,0.9870633893919794,77.30000000000001,76.30000000000001,2025-08-13T13:32:00.877001,
+https://www.nbcnews.com,html,0.9893730074388947,94.09999999999995,93.09999999999994,2025-08-13T13:32:35.878021,
+https://www.npr.org,html,0.9847560975609756,65.6,64.6,2025-08-13T13:33:01.081695,
+https://www.pbs.org,html,0.9865951742627346,74.6,73.6,2025-08-13T13:33:11.919092,
+https://www.apnews.com,html,0.9846390168970814,65.1,64.1,2025-08-13T13:33:48.409542,
+https://www.bloomberg.com,html,,,,2025-08-13T13:34:31.307402,Likely excluded via robots
+https://www.wsj.com,html,0.9802371541501975,50.59999999999997,49.599999999999966,2025-08-13T13:34:35.397010,
+https://www.ft.com,html,0.9892008639308856,92.59999999999994,91.59999999999994,2025-08-13T13:35:26.590911,
+https://www.economist.com,html,0.9705014749262539,33.89999999999999,32.9,2025-08-13T13:35:52.071759,
+https://www.forbes.com,html,,,,2025-08-13T13:37:18.193822,No archive found
+https://www.businessinsider.com,html,0.6774193548387097,3.1,2.1,2025-08-13T13:37:26.921095,
+https://www.techcrunch.com,html,1.0,1.0,1.0,2025-08-13T13:38:24.204161,
+https://www.wired.com,html,0.9038461538461539,10.399999999999999,9.399999999999999,2025-08-13T13:39:13.977981,
+https://www.theverge.com,html,0.9807321772639692,51.900000000000006,50.900000000000006,2025-08-13T13:40:16.812743,
+https://www.arstechnica.com,html,,,,2025-08-13T13:41:43.393735,No archive found
+https://www.engadget.com,html,0.8969072164948454,9.7,8.7,2025-08-13T13:41:51.618026,
+https://www.gizmodo.com,html,0.9826689774696707,57.7,56.7,2025-08-13T13:42:44.371017,
+https://www.mashable.com,html,0.9769585253456221,43.4,42.4,2025-08-13T13:43:18.073661,
+https://www.cnet.com,html,0.9680511182108626,31.300000000000008,30.300000000000008,2025-08-13T13:43:47.065267,
+https://www.zdnet.com,html,0.9285714285714285,14.000000000000005,13.000000000000004,2025-08-13T13:44:38.228072,
+https://www.pcmag.com,html,0.9658703071672355,29.30000000000001,28.30000000000001,2025-08-13T13:44:56.149858,
+https://www.tomshardware.com,html,0.9833055091819699,59.89999999999999,58.89999999999999,2025-08-13T13:45:39.376940,
+https://www.anandtech.com,html,0.9447513812154696,18.1,17.1,2025-08-13T13:45:55.078952,
+https://www.howtogeek.com,html,0.9823943661971831,56.800000000000004,55.800000000000004,2025-08-13T13:46:36.283620,
+https://www.makeuseof.com,html,,,,2025-08-13T13:47:14.247940,No archive found
+https://www.lifehacker.com,html,0.9743589743589746,39.0,38.00000000000001,2025-08-13T13:47:35.058636,
+https://www.wikipedia.org/wiki/Main_Page,html,0.5,2.0,1.0,2025-08-13T13:48:26.796520,
+https://www.britannica.com,html,,,,2025-08-13T13:49:43.740605,No archive found
+https://www.merriam-webster.com,html,0.9616858237547894,26.099999999999977,25.09999999999998,2025-08-13T13:49:54.857156,
+https://www.dictionary.com,html,0.9662162162162165,29.599999999999984,28.59999999999999,2025-08-13T13:50:28.487171,
+https://www.thesaurus.com,html,0.9662162162162165,29.599999999999984,28.59999999999999,2025-08-13T13:51:11.850249,
+https://www.oxfordlearnersdictionaries.com,html,,,,2025-08-13T13:51:54.976497,No archive found
+https://www.cambridge.org/dictionary,html,,,,2025-08-13T13:52:18.863999,No archive found
+https://www.collinsdictionary.com,html,0.9358974358974359,15.600000000000003,14.600000000000003,2025-08-13T13:52:35.573922,
+https://www.macmillandictionary.com,html,1.0,1.0,1.0,2025-08-13T13:53:08.080014,
+https://www.ldoceonline.com,html,,,,2025-08-13T13:53:55.616065,No archive found
+https://www.gutenberg.org,html,,,,2025-08-13T13:54:20.762892,No archive found
+https://www.openlibrary.org,html,,,,2025-08-13T13:55:01.174126,No archive found
+https://www.worldcat.org,html,,,,2025-08-13T13:55:27.351899,No archive found
+https://www.jstor.org,html,,,,2025-08-13T13:56:07.784464,No archive found
+https://www.pubmed.ncbi.nlm.nih.gov,html,,,,2025-08-13T13:56:36.370848,No archive found
+https://www.scholar.google.com,html,,,,2025-08-13T13:57:17.555718,No archive found
+https://www.researchgate.net,html,0.9702380952380955,33.6,32.60000000000001,2025-08-13T13:57:30.843411,
+https://www.academia.edu,html,,,,2025-08-13T13:58:33.686460,No archive found
+https://www.arxiv.org,html,0.0,1.0,0.0,2025-08-13T13:58:59.918376,
+https://www.ssrn.com,html,,,,2025-08-13T14:00:25.694469,No archive found
+https://www.ted.com,html,,,,2025-08-13T14:00:54.608041,No archive found
+https://www.khanacademy.org,html,0.7674418604651163,4.3,3.3,2025-08-13T14:01:10.201396,
+https://www.coursera.org,html,0.981203007518797,53.1999999999999,52.1999999999999,2025-08-13T14:01:48.671849,
+https://www.edx.org,html,0.0,1.0,0.0,2025-08-13T14:02:17.723119,
+https://www.udacity.com,html,0.8412698412698413,6.3,5.3,2025-08-13T14:02:39.980908,
+https://www.lynda.com,html,0.9180327868852459,12.200000000000003,11.200000000000003,2025-08-13T14:03:50.662658,
+https://www.skillshare.com,html,0.9696048632218845,32.90000000000001,31.900000000000013,2025-08-13T14:04:40.779523,
+https://www.pluralsight.com,html,0.7058823529411765,3.4000000000000004,2.4000000000000004,2025-08-13T14:05:22.044095,
+https://www.codecademy.com,html,0.9692307692307692,32.49999999999999,31.499999999999993,2025-08-13T14:06:14.781914,
+https://www.freecodecamp.org,html,0.4444444444444445,1.8,0.8,2025-08-13T14:07:22.013382,
+https://www.w3schools.com,html,0.7222222222222223,3.5999999999999996,2.6,2025-08-13T14:07:48.679767,
+https://www.tutorialspoint.com,html,,,,2025-08-13T14:09:16.322984,No archive found
+https://www.geeksforgeeks.org,html,,,,2025-08-13T14:09:56.653527,No archive found
+https://www.javatpoint.com,html,0.9899799599198397,99.79999999999998,98.79999999999998,2025-08-13T14:10:16.483970,
+https://www.programiz.com,html,,,,2025-08-13T14:11:41.523174,No archive found
+https://www.learn-c.org,html,0.803921568627451,5.1000000000000005,4.1000000000000005,2025-08-13T14:11:48.917904,
+https://www.cplusplus.com,html,0.7142857142857143,3.5,2.5,2025-08-13T14:13:15.196582,
+https://www.cppreference.com,html,0.7222222222222222,3.6,2.6,2025-08-13T14:13:38.704325,
+https://www.docs.python.org,html,0.0,1.0,0.0,2025-08-13T14:14:17.573138,
+https://www.ruby-doc.org,html,,,,2025-08-13T14:15:33.006882,No archive found
+https://www.golang.org/doc,html,0.7222222222222223,3.5999999999999996,2.6,2025-08-13T14:16:02.777758,
+https://www.rust-lang.org/learn,html,,,,2025-08-13T14:17:19.921538,No archive found
+https://www.kotlinlang.org/docs,html,0.5714285714285712,7.000000000000003,3.9999999999999996,2025-08-13T14:17:30.230001,
+https://www.scala-lang.org/documentation,html,0.01857585139318885,32.300000000000004,0.6,2025-08-13T14:18:10.188527,
+https://www.clojure.org,html,0.7142857142857143,3.5,2.5,2025-08-13T14:18:40.672946,
+https://www.elixir-lang.org,html,,,,2025-08-13T14:20:00.508964,No archive found
+https://www.erlang.org,html,0.0,1.0,0.0,2025-08-13T14:20:07.902615,
+https://www.haskell.org,html,,,,2025-08-13T14:21:03.820426,No archive found
+https://www.ocaml.org,html,0.6153846153846154,2.6,1.6,2025-08-13T14:21:11.505184,
+https://www.fsharp.org,html,0.8529411764705882,6.8,5.8,2025-08-13T14:22:04.953223,
+https://www.racket-lang.org,html,0.0,1.0,0.0,2025-08-13T14:22:39.002851,
+https://www.scheme.org,html,,,,2025-08-13T14:23:37.016484,No archive found
+https://www.common-lisp.net,html,,,,2025-08-13T14:24:05.690868,No archive found
+https://www.lua.org,html,0.0,1.0,0.0,2025-08-13T14:24:09.847979,
+https://www.tcl.tk,html,0.0,1.0,0.0,2025-08-13T14:25:15.674916,
+https://www.awk.dev,html,0.0,1.0,0.0,2025-08-13T14:25:56.626288,
+https://www.sed.sourceforge.io,html,0.0,1.0,0.0,2025-08-13T14:26:20.878738,
+https://www.vim.org,html,,,,2025-08-13T14:26:59.222976,No archive found
+https://www.emacs.org,html,,,,2025-08-13T14:27:21.359030,No archive found
+https://www.atom.io,html,,,,2025-08-13T14:28:04.757579,No archive found
+https://www.sublimetext.com,html,0.5,2.0,1.0,2025-08-13T14:28:14.150923,
+https://www.jetbrains.com,html,0.6153846153846154,2.6,1.6,2025-08-13T14:29:02.908065,
+https://www.eclipse.org,html,0.6875,3.2,2.2,2025-08-13T14:29:42.610374,
+https://www.netbeans.org,html,0.0,1.0,0.0,2025-08-13T14:30:18.667729,
+https://www.qt.io,html,1.0,1.0,1.0,2025-08-13T14:30:55.861821,
+https://www.gtk.org,html,1.0,1.0,1.0,2025-08-13T14:31:11.466354,
+https://www.wxwidgets.org,html,,,,2025-08-13T14:31:40.984849,No archive found
+https://www.fltk.org,html,1.0,1.0,1.0,2025-08-13T14:31:46.558485,
+https://www.tcl.tk,html,,,,2025-08-13T14:32:34.219815,No archive found
+https://www.pygame.org,html,0.0,1.0,0.0,2025-08-13T14:32:40.691922,
+https://www.libsdl.org,html,,,,2025-08-13T14:33:20.147869,No archive found
+https://www.sfml-dev.org,html,0.6774193548387097,3.1,2.1,2025-08-13T14:33:35.385485,
+https://www.raylib.com,html,0.0,1.0,0.0,2025-08-13T14:34:02.847488,
+https://www.love2d.org,html,,,,2025-08-13T14:34:53.203804,No archive found
+https://www.godotengine.org,html,0.22838137472283812,45.10000000000001,10.3,2025-08-13T14:35:27.279082,
+https://www.unity.com,html,0.8113207547169812,5.3,4.3,2025-08-13T14:36:16.408213,
+https://www.unrealengine.com,html,,,,2025-08-13T14:37:26.129726,No archive found
+https://www.cryengine.com,html,,,,2025-08-13T14:37:55.343664,No archive found
+https://www.amazonlumberyard.com,html,,,,2025-08-13T14:38:39.061083,No archive found
+https://www.construct.net,html,0.9408284023668639,16.900000000000002,15.900000000000002,2025-08-13T14:39:01.576814,
+https://www.gamemaker.io,html,0.0,1.0,0.0,2025-08-13T14:39:35.150969,
+https://www.rpgmakerweb.com,html,1.0,1.0,1.0,2025-08-13T14:40:06.746686,
+https://www.renpy.org,html,,,,2025-08-13T14:40:37.782071,No archive found
+https://www.twinery.org,html,1.0,1.0,1.0,2025-08-13T14:40:57.496089,
+https://www.inkle.co.uk,html,,,,2025-08-13T14:41:44.022726,No archive found
+https://www.yoyogames.com,html,0.9230769230769231,13.0,12.0,2025-08-13T14:42:06.125462,
+https://www.scirra.com,html,0.9609375,25.600000000000005,24.600000000000005,2025-08-13T14:42:20.944974,
+https://www.clickteam.com,html,0.968354430379747,31.600000000000005,30.60000000000001,2025-08-13T14:43:02.093518,
+https://www.stencyl.com,html,0.9305555555555556,14.4,13.4,2025-08-13T14:43:18.394515,
+https://www.gamesalad.com,html,0.9824561403508772,62.69999999999992,61.59999999999992,2025-08-13T14:43:37.720206,
+https://www.buildbox.com,html,0.9898063200815495,98.09999999999988,97.09999999999988,2025-08-13T14:43:49.110020,
+https://www.gdevelop.io,html,,,,2025-08-13T14:44:31.611527,No archive found
+https://www.defold.com,html,0.7142857142857143,3.5,2.5,2025-08-13T14:44:36.571583,
+https://www.cocos.com,html,0.9704142011834319,33.79999999999999,32.79999999999999,2025-08-13T14:45:15.995384,
+https://www.corona-labs.com,html,,,,2025-08-13T14:46:11.854200,No archive found
+https://www.marmalade-tech.com,html,,,,2025-08-13T14:46:43.320981,No archive found
+https://www.shiva-engine.com,html,,,,2025-08-13T14:47:22.863233,No archive found
+https://www.leadwerks.com,html,0.9295774647887324,14.200000000000001,13.200000000000001,2025-08-13T14:47:25.429497,
+https://www.stride3d.net,html,0.6296296296296297,2.7,1.7000000000000002,2025-08-13T14:47:37.276847,
+https://www.armory3d.org,html,0.0,1.0,0.0,2025-08-13T14:48:28.270683,
+https://github.com,spa,0.9865047233468288,74.09999999999991,73.09999999999992,2025-08-13T14:49:22.867492,
+https://gitlab.com,spa,0.8393574297188755,24.9,20.9,2025-08-13T14:49:52.299371,
+https://bitbucket.org,spa,0.9831081081081081,59.199999999999996,58.199999999999996,2025-08-13T14:51:01.633458,
+https://www.notion.so,spa,0.7142857142857143,3.5,2.5,2025-08-13T14:51:23.998167,
+https://www.figma.com,spa,0.9746835443037974,39.5,38.5,2025-08-13T14:52:32.313111,
+https://www.canva.com,spa,0.9363057324840764,15.700000000000006,14.700000000000006,2025-08-13T14:53:14.089149,
+https://www.miro.com,spa,,,,2025-08-13T14:53:41.045025,No archive found
+https://www.airtable.com,spa,0.8863636363636362,8.8,7.8,2025-08-13T14:54:02.398257,
+https://www.monday.com,spa,,,,2025-08-13T14:55:19.924151,No archive found
+https://www.asana.com,spa,0.8333333333333333,6.000000000000001,5.0,2025-08-13T14:55:37.647133,
+https://www.trello.com,spa,0.987546699875467,80.29999999999986,79.29999999999986,2025-08-13T14:56:32.583700,
+https://www.jira.atlassian.com,spa,0.6153846153846154,2.6,1.6,2025-08-13T14:56:50.441343,
+https://www.slack.com,spa,0.9788583509513742,47.299999999999976,46.299999999999976,2025-08-13T14:57:00.121258,
+https://www.discord.com,spa,,,,2025-08-13T14:57:52.870902,No archive found
+https://www.zoom.us,spa,,,,2025-08-13T14:58:24.551244,No archive found
+https://www.teams.microsoft.com,spa,0.6153846153846154,2.6,1.6,2025-08-13T14:58:28.521876,
+https://www.meet.google.com,spa,0.3333333333333333,1.5,0.5,2025-08-13T14:58:55.398866,
+https://www.whereby.com,spa,0.8919135308246601,124.90000000000052,111.4000000000005,2025-08-13T14:59:13.864817,
+https://www.around.co,spa,,,,2025-08-13T15:00:44.628387,No archive found
+https://www.butter.us,spa,,,,2025-08-13T15:01:20.466253,No archive found
+https://www.gmail.com,spa,,,,2025-08-13T15:01:45.673604,No archive found
+https://www.outlook.com,spa,0.0,6.0,0.0,2025-08-13T15:02:02.994354,
+https://www.mail.yahoo.com,spa,,,,2025-08-13T15:03:06.142320,No archive found
+https://www.protonmail.com,spa,0.0,1.0,0.0,2025-08-13T15:03:23.013039,
+https://www.tutanota.com,spa,0.0,1.0,0.0,2025-08-13T15:04:12.403351,
+https://www.hey.com,spa,0.0,1.0,0.0,2025-08-13T15:04:55.972203,
+https://www.spark.app,spa,0.8870056497175142,17.700000000000003,15.700000000000003,2025-08-13T15:05:54.785224,
+https://www.superhuman.com,spa,0.9952312827849308,209.70000000000124,208.7000000000012,2025-08-13T15:06:32.796082,
+https://www.front.com,spa,0.9728997289972899,36.9,35.9,2025-08-13T15:06:44.712495,
+https://www.missive.com,spa,0.8910891089108911,10.1,9.0,2025-08-13T15:07:22.375447,
+https://www.netflix.com,spa,,,,2025-08-13T15:07:55.681612,No archive found
+https://www.hulu.com,spa,,,,2025-08-13T15:08:27.086417,No archive found
+https://www.disneyplus.com,spa,,,,2025-08-13T15:09:04.391240,No archive found
+https://www.primevideo.com,spa,,,,2025-08-13T15:09:33.513457,No archive found
+https://www.hbomax.com,spa,0.9502487562189055,20.1,19.1,2025-08-13T15:10:01.219598,
+https://www.peacocktv.com,spa,0.9074074074074072,10.800000000000002,9.8,2025-08-13T15:11:05.319095,
+https://www.paramountplus.com,spa,0.9253731343283582,13.400000000000002,12.400000000000002,2025-08-13T15:11:55.483401,
+https://www.appletv.plus,spa,,,,2025-08-13T15:12:49.188111,No archive found
+https://www.youtube.com/tv,spa,0.5833333333333334,2.4,1.4,2025-08-13T15:12:57.818462,
+https://www.twitch.tv,spa,0.9765807962529274,42.69999999999998,41.69999999999998,2025-08-13T15:13:13.559647,
+https://www.spotify.com,spa,0.9193548387096774,12.400000000000002,11.400000000000002,2025-08-13T15:13:59.281707,
+https://www.music.apple.com,spa,0.7142857142857143,3.5,2.5,2025-08-13T15:14:37.887312,
+https://www.music.youtube.com,spa,0.9193548387096774,12.4,11.4,2025-08-13T15:15:33.270727,
+https://www.tidal.com,spa,0.4444444444444445,1.8,0.8,2025-08-13T15:16:11.666981,
+https://www.deezer.com,spa,0.7674418604651162,17.200000000000003,13.200000000000001,2025-08-13T15:16:38.695008,
+https://www.pandora.com,spa,0.898989898989899,9.9,8.9,2025-08-13T15:18:02.996533,
+https://www.soundcloud.com,spa,0.9206349206349205,12.600000000000003,11.600000000000001,2025-08-13T15:18:40.332810,
+https://www.bandcamp.com,spa,0.8823529411764705,8.5,7.499999999999999,2025-08-13T15:19:01.930617,
+https://www.mixcloud.com,spa,0.4444444444444445,1.8,0.8,2025-08-13T15:19:30.216356,
+https://www.audiomack.com,spa,,,,2025-08-13T15:20:24.012679,No archive found
+https://www.dropbox.com,spa,0.9889746416758546,90.69999999999993,89.69999999999995,2025-08-13T15:20:40.651165,
+https://www.drive.google.com,spa,0.8175182481751829,27.399999999999995,22.40000000000001,2025-08-13T15:21:23.918815,
+https://www.onedrive.com,spa,,,,2025-08-13T15:22:30.889384,No archive found
+https://www.icloud.com,spa,,,,2025-08-13T15:22:39.985483,No archive found
+https://www.box.com,spa,0.8999999999999998,10.000000000000002,9.0,2025-08-13T15:22:59.079903,
+https://www.mega.nz,spa,0.0,1.0,0.0,2025-08-13T15:23:22.101738,
+https://www.pcloud.com,spa,0.976303317535545,42.2,41.2,2025-08-13T15:23:43.273576,
+https://www.sync.com,spa,0.9710982658959537,34.6,33.6,2025-08-13T15:23:59.225468,
+https://www.tresorit.com,spa,0.9415204678362573,17.1,16.1,2025-08-13T15:24:58.249149,
+https://www.icedrive.net,spa,,,,2025-08-13T15:25:45.548004,No archive found
+https://www.codesandbox.io,spa,,,,2025-08-13T15:26:17.997220,No archive found
+https://www.codepen.io,spa,0.8701298701298701,7.699999999999999,6.699999999999999,2025-08-13T15:26:26.734308,
+https://www.jsfiddle.net,spa,0.8924731182795697,9.3,8.299999999999999,2025-08-13T15:26:47.711235,
+https://www.replit.com,spa,0.9775784753363229,44.60000000000001,43.60000000000001,2025-08-13T15:27:44.530422,
+https://www.stackblitz.com,spa,0.7777777777777778,4.5,3.5,2025-08-13T15:27:52.804663,
+https://www.glitch.com,spa,0.6153846153846154,2.6,1.6,2025-08-13T15:28:19.158967,
+https://www.codesandbox.io,spa,,,,2025-08-13T15:29:02.197886,No archive found
+https://www.gitpod.io,spa,0.0,1.0,0.0,2025-08-13T15:29:05.346422,
+https://www.idx.dev,spa,0.6428571428571429,2.8,1.8,2025-08-13T15:29:55.284958,
+https://www.vscode.dev,spa,0.7142857142857143,3.5,2.5,2025-08-13T15:30:24.748954,
+https://www.vercel.com,spa,,,,2025-08-13T15:31:27.540069,No archive found
+https://www.netlify.com,spa,,,,2025-08-13T15:31:58.925444,No archive found
+https://www.heroku.com,spa,0.9869960988296489,76.89999999999986,75.89999999999986,2025-08-13T15:32:00.326405,
+https://www.render.com,spa,0.9358974358974359,15.6,14.6,2025-08-13T15:32:32.825291,
+https://www.railway.app,spa,0.0,1.0,0.0,2025-08-13T15:33:27.254731,
+https://www.fly.io,spa,0.0,1.0,0.0,2025-08-13T15:34:19.256239,
+https://www.cyclic.sh,spa,0.9122807017543858,11.400000000000006,10.400000000000004,2025-08-13T15:34:50.281138,
+https://www.deta.sh,spa,1.0,1.0,1.0,2025-08-13T15:35:17.902633,
+https://www.glitch.com,spa,0.6153846153846154,2.6,1.6,2025-08-13T15:36:20.040254,
+https://www.repl.it,spa,1.0,1.0,1.0,2025-08-13T15:36:59.074757,
+https://www.linear.app,spa,0.9686520376175548,31.9,30.9,2025-08-13T15:37:16.314366,
+https://www.height.app,spa,0.9806949806949806,51.79999999999988,50.79999999999988,2025-08-13T15:37:37.307947,
+https://www.clickup.com,spa,0.9777034559643255,89.7,87.7,2025-08-13T15:37:45.003624,
+https://www.basecamp.com,spa,0.4444444444444445,1.8,0.8,2025-08-13T15:38:36.240083,
+https://www.todoist.com,spa,,,,2025-08-13T15:39:40.197591,No archive found
+https://www.any.do,spa,0.7674418604651162,4.300000000000001,3.3000000000000003,2025-08-13T15:40:11.643656,
+https://www.ticktick.com,spa,0.962121212121212,26.400000000000016,25.400000000000013,2025-08-13T15:40:59.764891,
+https://www.things3.com,spa,0.7058823529411765,3.4000000000000004,2.4000000000000004,2025-08-13T15:41:17.344380,
+https://www.omnifocus.com,spa,,,,2025-08-13T15:41:49.366132,No archive found
+https://www.nozbe.com,spa,,,,2025-08-13T15:42:21.634857,No archive found
+https://www.evernote.com,spa,0.6774193548387097,3.1,2.1,2025-08-13T15:42:24.126545,
+https://www.onenote.com,spa,0.0,1.0,0.0,2025-08-13T15:42:52.142484,
+https://www.bear.app,spa,0.9441340782122905,17.9,16.9,2025-08-13T15:44:06.569216,
+https://www.obsidian.md,spa,0.0,1.0,0.0,2025-08-13T15:44:51.385056,
+https://www.roamresearch.com,spa,,,,2025-08-13T15:45:52.472538,No archive found
+https://www.logseq.com,spa,,,,2025-08-13T15:46:26.605219,No archive found
+https://www.remnote.com,spa,,,,2025-08-13T15:46:57.844950,No archive found
+https://www.mem.ai,spa,,,,2025-08-13T15:47:32.619964,No archive found
+https://www.reflect.app,spa,0.4444444444444445,1.8,0.8,2025-08-13T15:47:55.451014,
+https://www.craft.do,spa,0.0,1.0,0.0,2025-08-13T15:48:25.653131,
+https://www.coda.io,spa,0.9833887043189369,60.2,59.2,2025-08-13T15:49:51.536000,
+https://www.notion.so,spa,0.7142857142857143,3.5,2.5,2025-08-13T15:50:02.552327,
+https://www.clickup.com,spa,0.9778270509977827,90.2,88.2,2025-08-13T15:50:46.141718,
+https://www.airtable.com,spa,,,,2025-08-13T15:52:00.996274,No archive found
+https://www.smartsheet.com,spa,0.8666666666666667,7.5,6.5,2025-08-13T15:52:23.898744,
+https://www.wrike.com,spa,,,,2025-08-13T15:53:52.841029,No archive found
+https://www.teamwork.com,spa,0.9808795411089866,52.3,51.3,2025-08-13T15:54:22.471230,
+https://www.freedcamp.com,spa,,,,2025-08-13T15:55:11.646108,No archive found
+https://www.paymoapp.com,spa,,,,2025-08-13T15:55:42.943388,No archive found
+https://www.toggl.com,spa,0.9612403100775192,25.800000000000008,24.800000000000004,2025-08-13T15:56:02.043947,
+https://www.clockify.me,spa,0.7560975609756099,4.1,3.1,2025-08-13T15:56:26.404626,
+https://www.harvest.com,spa,,,,2025-08-13T15:57:44.008888,No archive found
+https://www.rescuetime.com,spa,,,,2025-08-13T15:58:24.741950,No archive found
+https://www.timecamp.com,spa,0.9937965260545906,161.20000000000016,160.20000000000016,2025-08-13T15:58:28.788247,
+https://www.timely.com,spa,0.9921445404556166,127.29999999999998,126.29999999999998,2025-08-13T15:59:48.006507,
+https://www.everhour.com,spa,,,,2025-08-13T16:00:36.050519,No archive found
+https://www.tmetric.com,spa,0.4444444444444445,1.8,0.8,2025-08-13T16:00:48.304495,
+https://www.hubstaff.com,spa,0.3333333333333333,1.5,0.5,2025-08-13T16:01:41.574069,
+https://www.time-doctor.com,spa,1.0,1.0,1.0,2025-08-13T16:02:10.459752,
+https://www.desktime.com,spa,0.9481865284974095,19.300000000000004,18.300000000000008,2025-08-13T16:02:49.168302,
+https://www.mint.com,spa,0.8214285714285714,5.6,4.6,2025-08-13T16:03:33.416528,
+https://www.personalcapital.com,spa,0.0,1.0,0.0,2025-08-13T16:04:47.015364,
+https://www.ynab.com,spa,0.9709302325581397,34.39999999999999,33.4,2025-08-13T16:05:36.936591,
+https://www.everydollar.com,spa,0.7727272727272727,4.4,3.4000000000000004,2025-08-13T16:05:52.783038,
+https://www.pocketguard.com,spa,,,,2025-08-13T16:07:15.764653,No archive found
+https://www.truebill.com,spa,,,,2025-08-13T16:07:50.167836,No archive found
+https://www.clarity.money.com,spa,,,,2025-08-13T16:08:21.584397,No archive found
+https://www.emma-app.com,spa,0.9818511796733213,55.099999999999966,54.099999999999966,2025-08-13T16:08:51.512392,
+https://www.spendee.com,spa,0.8,5.0,4.0,2025-08-13T16:09:23.775170,
+https://www.wally.me,spa,0.9831649831649831,59.39999999999999,58.39999999999999,2025-08-13T16:09:51.079732,
+https://www.robinhood.com,spa,0.8333333333333335,5.999999999999999,5.0,2025-08-13T16:10:48.181846,
+https://www.etrade.com,spa,0.0,1.0,0.0,2025-08-13T16:11:25.790342,
+https://www.tdameritrade.com,spa,,,,2025-08-13T16:12:15.459317,No archive found
+https://www.fidelity.com,spa,0.9759036144578314,41.499999999999964,40.499999999999964,2025-08-13T16:12:24.740302,
+https://www.schwab.com,spa,0.9489795918367347,19.6,18.6,2025-08-13T16:12:59.967174,
+https://www.vanguard.com,spa,,,,2025-08-13T16:14:17.390816,No archive found
+https://www.interactivebrokers.com,spa,0.6153846153846154,2.6,1.6,2025-08-13T16:14:25.433540,
+https://www.webull.com,spa,0.9872122762148338,78.1999999999998,77.1999999999998,2025-08-13T16:15:36.065047,
+https://www.public.com,spa,0.9532710280373832,21.40000000000001,20.40000000000001,2025-08-13T16:16:36.590520,
+https://www.sofi.com,spa,0.9612403100775194,25.800000000000008,24.800000000000008,2025-08-13T16:17:40.446169,
+https://www.coinbase.com,spa,,,,2025-08-13T16:18:55.593001,No archive found
+https://www.binance.com,spa,0.4444444444444445,1.8,0.8,2025-08-13T16:18:56.667148,
+https://www.kraken.com,spa,,,,2025-08-13T16:19:41.012521,No archive found
+https://www.gemini.com,spa,,,,2025-08-13T16:20:12.289372,No archive found
+https://www.crypto.com,spa,,,,2025-08-13T16:20:43.608095,No archive found
+https://www.ftx.com,spa,,,,2025-08-13T16:21:10.679953,No archive found
+https://www.kucoin.com,spa,0.9390243902439025,16.400000000000006,15.400000000000006,2025-08-13T16:21:13.403819,
+https://www.bitfinex.com,spa,0.6296296296296297,2.7,1.7000000000000002,2025-08-13T16:21:55.959120,
+https://www.bitstamp.com,spa,,,,2025-08-13T16:22:58.452103,No archive found
+https://www.okx.com,spa,1.0,1.0,1.0,2025-08-13T16:23:11.489243,
+https://www.opensea.io,spa,,,,2025-08-13T16:23:58.617514,No archive found
+https://www.rarible.com,spa,,,,2025-08-13T16:24:36.296245,No archive found
+https://www.foundation.app,spa,,,,2025-08-13T16:25:13.844255,No archive found
+https://www.superrare.com,spa,,,,2025-08-13T16:25:36.407723,No archive found
+https://www.niftygateway.com,spa,0.9107142857142856,11.200000000000001,10.2,2025-08-13T16:25:52.203636,
+https://www.makersplace.com,spa,,,,2025-08-13T16:27:18.381119,No archive found
+https://www.knownorigin.io,spa,0.4736842105263158,1.9,0.9,2025-08-13T16:27:19.860397,
+https://www.asyncart.com,spa,0.0,1.0,0.0,2025-08-13T16:28:09.675718,
+https://www.zora.co,spa,0.5,2.0,1.0,2025-08-13T16:28:49.570511,
+https://www.catalog.works,spa,0.0,1.0,0.0,2025-08-13T16:29:42.210514,
+https://www.photoshop.com,spa,0.8076923076923078,5.199999999999999,4.2,2025-08-13T16:30:26.088126,
+https://www.illustrator.com,spa,0.0,1.0,0.0,2025-08-13T16:31:20.616957,
+https://www.indesign.com,spa,1.0,1.0,1.0,2025-08-13T16:31:48.353033,
+https://www.premierpro.com,spa,1.0,1.0,1.0,2025-08-13T16:32:08.864588,
+https://www.aftereffects.com,spa,,,,2025-08-13T16:32:34.500227,No archive found
+https://www.lightroom.com,spa,,,,2025-08-13T16:33:10.922166,No archive found
+https://www.xd.adobe.com,spa,0.0,2.0,0.0,2025-08-13T16:33:22.572450,
+https://www.framer.com,spa,0.9980217606330366,505.5000000000018,504.5000000000018,2025-08-13T16:33:50.909526,
+https://www.principle.app,spa,0.0,1.0,0.0,2025-08-13T16:34:14.728025,
+https://www.origami.design,spa,0.4444444444444445,1.8,0.8,2025-08-13T16:34:44.569844,
+https://www.invisionapp.com,spa,0.2105263157894737,3.8,0.8,2025-08-13T16:35:28.001230,
+https://www.marvel.app,spa,,,,2025-08-13T16:36:13.658132,No archive found
+https://www.proto.io,spa,,,,2025-08-13T16:36:54.806487,No archive found
+https://www.justinmind.com,spa,,,,2025-08-13T16:37:32.661871,No archive found
+https://www.mockflow.com,spa,0.9502487562189055,20.1,19.1,2025-08-13T16:37:35.203510,
+https://www.balsamiq.com,spa,0.7674418604651163,4.3,3.3,2025-08-13T16:38:21.957974,
+https://www.lucidchart.com,spa,0.9662162162162162,29.6,28.6,2025-08-13T16:38:56.393501,
+https://www.draw.io,spa,0.0,1.0,0.0,2025-08-13T16:39:19.593352,
+https://www.mural.co,spa,,,,2025-08-13T16:40:06.332860,No archive found
+https://www.milanote.com,spa,1.0,1.0,1.0,2025-08-13T16:40:11.729465,
+https://www.whimsical.com,spa,,,,2025-08-13T16:40:54.261826,No archive found
+https://www.excalidraw.com,spa,1.0,1.0,1.0,2025-08-13T16:40:57.483332,
+https://www.tldraw.com,spa,0.0,1.0,0.0,2025-08-13T16:41:27.680980,
+https://www.concepts.app,spa,,,,2025-08-13T16:41:55.700528,No archive found
+https://www.procreate.app,spa,,,,2025-08-13T16:42:18.201155,No archive found
+https://www.affinity.serif.com,spa,0.6153846153846154,2.6,1.6,2025-08-13T16:42:20.098432,
+https://www.sketch.com,spa,0.935483870967742,15.500000000000002,14.500000000000002,2025-08-13T16:42:46.989556,
+https://www.pixelmator.com,spa,0.75,4.0,3.0,2025-08-13T16:43:27.330334,
+https://www.canva.com,spa,0.9363057324840764,15.700000000000006,14.700000000000006,2025-08-13T16:43:49.445026,
+https://www.piktochart.com,spa,0.9570815450643778,23.3,22.300000000000004,2025-08-13T16:44:18.983518,
+https://www.venngage.com,spa,0.990909090909091,109.99999999999997,108.99999999999997,2025-08-13T16:45:04.111845,
+https://www.infogram.com,spa,0.98046875,51.199999999999996,50.199999999999996,2025-08-13T16:45:59.879246,
+https://www.visme.co,spa,0.9728997289972902,36.899999999999984,35.89999999999999,2025-08-13T16:46:25.859507,
+https://www.crello.com,spa,,,,2025-08-13T16:47:24.123325,No archive found
+https://www.snappa.com,spa,,,,2025-08-13T16:47:52.352960,No archive found
+https://www.stencil.com,spa,,,,2025-08-13T16:48:17.480759,No archive found
+https://www.picmonkey.com,spa,0.9421965317919078,17.299999999999997,16.3,2025-08-13T16:48:38.160168,
+https://www.befunky.com,spa,0.9701492537313433,33.50000000000001,32.50000000000001,2025-08-13T16:49:08.061904,
+https://www.fotor.com,spa,0.9674267100977199,30.700000000000017,29.700000000000017,2025-08-13T16:49:35.163673,
+https://www.photopea.com,spa,0.0,1.0,0.0,2025-08-13T16:50:22.343788,
+https://www.sumopaint.com,spa,0.6153846153846154,2.6,1.6,2025-08-13T16:51:05.370281,
+https://www.pixlr.com,spa,0.940119760479042,16.7,15.700000000000001,2025-08-13T16:51:45.572439,
+https://www.ribbet.com,spa,1.0,1.0,1.0,2025-08-13T16:52:21.042123,
+https://www.fotojet.com,spa,1.0,1.0,1.0,2025-08-13T16:52:34.339133,
+https://www.designcap.com,spa,0.9473684210526315,19.0,18.0,2025-08-13T16:52:47.731159,
+https://www.creatopy.com,spa,0.9736842105263158,38.0,37.0,2025-08-13T16:53:48.506479,
+https://www.bannersnack.com,spa,,,,2025-08-13T16:54:52.883347,No archive found
+https://www.displayr.com,spa,,,,2025-08-13T16:55:21.072157,No archive found
+https://www.flourish.studio,spa,,,,2025-08-13T16:55:55.187424,No archive found
+https://www.datawrapper.de,spa,,,,2025-08-13T16:56:38.345450,No archive found
+https://www.tableau.com,spa,,,,2025-08-13T16:57:13.096304,No archive found
+https://www.powerbi.microsoft.com,spa,,,,2025-08-13T16:57:50.192964,Likely excluded via robots
+https://www.looker.com,spa,0.9259259259259259,13.5,12.5,2025-08-13T16:57:54.303151,
+https://www.metabase.com,spa,0.8765432098765431,8.100000000000001,7.1000000000000005,2025-08-13T16:58:52.295451,
+https://www.redash.io,spa,0.4444444444444445,1.8,0.8,2025-08-13T16:59:56.809884,
+https://www.superset.apache.org,spa,,,,2025-08-13T17:01:06.920312,No archive found
+https://www.grafana.com,spa,,,,2025-08-13T17:01:39.168728,No archive found
+https://www.kibana.elastic.co,spa,,,,2025-08-13T17:02:11.964381,No archive found
+https://www.splunk.com,spa,,,,2025-08-13T17:02:40.188852,No archive found
+https://www.datadog.com,spa,0.9408284023668639,16.900000000000006,15.900000000000006,2025-08-13T17:03:04.908448,
+https://www.newrelic.com,spa,0.4444444444444445,1.8,0.8,2025-08-13T17:03:49.934956,
+https://www.appdynamics.com,spa,,,,2025-08-13T17:05:07.020374,No archive found
+https://www.dynatrace.com,spa,,,,2025-08-13T17:05:50.309273,No archive found
+https://www.sentry.io,spa,,,,2025-08-13T17:06:17.640145,No archive found
+https://www.rollbar.com,spa,0.9294871794871794,15.600000000000003,14.500000000000002,2025-08-13T17:06:29.647195,
+https://www.bugsnag.com,spa,0.9352941176470587,17.000000000000007,15.900000000000006,2025-08-13T17:06:50.818626,
+https://www.airbrake.io,spa,,,,2025-08-13T17:07:19.747382,No archive found
+https://www.honeybadger.io,spa,0.911504424778761,11.3,10.3,2025-08-13T17:07:25.593524,
+https://www.raygun.com,spa,,,,2025-08-13T17:08:41.760572,No archive found
+https://www.logrocket.com,spa,0.6969696969696969,3.3,2.3,2025-08-13T17:08:54.789316,
+https://www.fullstory.com,spa,0.9551569506726457,22.3,21.3,2025-08-13T17:09:45.550384,
+https://www.hotjar.com,spa,0.6774193548387097,3.0999999999999996,2.1,2025-08-13T17:10:05.877731,
+https://www.crazyegg.com,spa,0.940828402366864,16.9,15.9,2025-08-13T17:11:09.537671,
+https://www.mouseflow.com,spa,0.99,99.99999999999999,98.99999999999999,2025-08-13T17:11:29.602287,
+https://www.luckyorange.com,spa,0.9932295192958699,147.70000000000084,146.7000000000008,2025-08-13T17:11:53.219198,
+https://www.inspectlet.com,spa,0.9476439790575917,19.1,18.1,2025-08-13T17:12:31.606132,
+https://www.uservoice.com,spa,0.9869621903520208,76.69999999999997,75.69999999999997,2025-08-13T17:12:50.226277,
+https://www.zendesk.com,spa,,,,2025-08-13T17:13:22.582869,No archive found
+https://www.intercom.com,spa,0.6153846153846154,2.6,1.6,2025-08-13T17:13:26.150479,
+https://www.drift.com,spa,0.9610894941634242,25.70000000000001,24.70000000000001,2025-08-13T17:14:12.399475,
+https://www.crisp.chat,spa,,,,2025-08-13T17:14:55.273487,No archive found
+https://www.livechat.com,spa,0.8275862068965517,5.8,4.8,2025-08-13T17:15:02.505073,
+https://www.olark.com,spa,0.10958904109589042,7.3,0.8,2025-08-13T17:15:57.383148,
+https://www.tawk.to,spa,,,,2025-08-13T17:16:48.330338,No archive found
+https://www.chatra.com,spa,,,,2025-08-13T17:17:19.521148,No archive found
+https://www.comm100.com,spa,,,,2025-08-13T17:17:51.123636,No archive found
+https://www.helpscout.com,spa,,,,2025-08-13T17:18:22.244869,No archive found
+https://www.groove.hq,spa,,,,2025-08-13T17:18:50.370889,No archive found
+https://www.kayako.com,spa,0.9780701754385964,45.59999999999993,44.59999999999993,2025-08-13T17:18:56.319230,
+https://www.freshdesk.com,spa,,,,2025-08-13T17:19:43.097255,No archive found
+https://api.github.com,api,0.0,1.0,0.0,2025-08-13T17:19:59.620752,
+https://api.gitlab.com,api,,,,2025-08-13T17:20:41.315796,No archive found
+https://api.bitbucket.org,api,0.6153846153846154,2.6,1.6,2025-08-13T17:21:08.714283,
+https://api.twitter.com,api,0.0,1.0,0.0,2025-08-13T17:21:48.704185,
+https://graph.facebook.com,api,0.0,1.0,0.0,2025-08-13T17:22:28.331847,
+https://api.instagram.com,api,,,,2025-08-13T17:22:59.290430,No archive found
+https://api.linkedin.com,api,0.0,1.0,0.0,2025-08-13T17:23:07.056372,
+https://api.pinterest.com,api,,,,2025-08-13T17:23:37.803316,No archive found
+https://api.reddit.com,api,,,,2025-08-13T17:24:00.043887,No archive found
+https://api.tumblr.com,api,0.8765432098765432,8.1,7.1,2025-08-13T17:24:03.685040,
+https://api.flickr.com,api,,,,2025-08-13T17:24:26.867258,No archive found
+https://api.vimeo.com,api,,,,2025-08-13T17:24:49.320063,No archive found
+https://api.dailymotion.com,api,,,,2025-08-13T17:25:11.558751,No archive found
+https://api.twitch.tv,api,,,,2025-08-13T17:25:47.522121,No archive found
+https://api.youtube.com,api,,,,2025-08-13T17:26:12.678206,No archive found
+https://api.spotify.com,api,,,,2025-08-13T17:26:47.412210,No archive found
+https://api.soundcloud.com,api,0.0,2.0,0.0,2025-08-13T17:27:13.507659,
+https://api.deezer.com,api,0.0,1.0,0.0,2025-08-13T17:28:04.263307,
+https://api.tidal.com,api,0.0,1.0,0.0,2025-08-13T17:28:39.884713,
+https://api.napster.com,api,,,,2025-08-13T17:29:13.615483,No archive found
+https://api.stripe.com,api,,,,2025-08-13T17:29:31.379464,No archive found
+https://api.paypal.com,api,,,,2025-08-13T17:30:09.200660,No archive found
+https://api.square.com,api,,,,2025-08-13T17:30:43.324323,No archive found
+https://api.braintreepayments.com,api,,,,2025-08-13T17:31:06.656026,No archive found
+https://api.authorize.net,api,,,,2025-08-13T17:31:43.969071,No archive found
+https://api.2checkout.com,api,,,,2025-08-13T17:32:11.929862,No archive found
+https://api.recurly.com,api,,,,2025-08-13T17:32:33.527027,No archive found
+https://api.chargebee.com,api,,,,2025-08-13T17:33:01.352560,No archive found
+https://api.paddle.com,api,0.0,1.0,0.0,2025-08-13T17:33:07.250963,
+https://api.razorpay.com,api,,,,2025-08-13T17:33:34.702076,No archive found
+https://api.slack.com,api,,,,2025-08-13T17:33:56.815115,No archive found
+https://api.discord.com,api,,,,2025-08-13T17:34:14.732928,No archive found
+https://api.telegram.org,api,,,,2025-08-13T17:34:36.858804,No archive found
+https://api.whatsapp.com,api,,,,2025-08-13T17:35:05.970007,No archive found
+https://api.zoom.us,api,0.9576629974597797,118.09999999999997,113.09999999999995,2025-08-13T17:35:19.821924,
+https://api.teams.microsoft.com,api,,,,2025-08-13T17:36:12.625044,Likely excluded via robots
+https://api.webex.com,api,,,,2025-08-13T17:36:41.564730,No archive found
+https://api.gotomeeting.com,api,,,,2025-08-13T17:37:09.501922,No archive found
+https://api.skype.com,api,,,,2025-08-13T17:37:43.757954,No archive found
+https://api.viber.com,api,,,,2025-08-13T17:38:13.165036,No archive found
+https://api.dropbox.com,api,,,,2025-08-13T17:38:44.375117,No archive found
+https://api.box.com,api,,,,2025-08-13T17:39:21.519148,No archive found
+https://api.onedrive.com,api,,,,2025-08-13T17:39:43.592840,No archive found
+https://api.googledrive.com,api,,,,2025-08-13T17:40:06.529040,No archive found
+https://api.icloud.com,api,,,,2025-08-13T17:40:11.910530,No archive found
+https://api.mega.nz,api,,,,2025-08-13T17:40:33.882197,No archive found
+https://api.pcloud.com,api,,,,2025-08-13T17:41:00.749381,No archive found
+https://api.mediafire.com,api,,,,2025-08-13T17:41:30.372077,No archive found
+https://api.wetransfer.com,api,,,,2025-08-13T17:42:00.946521,No archive found
+https://api.sendspace.com,api,0.4444444444444445,3.6,1.6,2025-08-13T17:42:29.164705,
+https://api.openweathermap.org,api,,,,2025-08-13T17:43:17.265336,No archive found
+https://api.weatherapi.com,api,0.0,1.0,0.0,2025-08-13T17:43:25.683912,
+https://api.darksky.net,api,,,,2025-08-13T17:43:50.347346,No archive found
+https://api.weather.gov,api,0.0,1.0,0.0,2025-08-13T17:43:57.287124,
+https://api.meteostat.net,api,0.5833333333333334,2.4,1.4,2025-08-13T17:44:28.396407,
+https://api.climacell.co,api,,,,2025-08-13T17:45:06.443211,No archive found
+https://api.stormglass.io,api,,,,2025-08-13T17:45:38.461695,No archive found
+https://api.windy.com,api,0.0,1.0,0.0,2025-08-13T17:45:44.813294,
+https://api.weatherstack.com,api,,,,2025-08-13T17:46:39.079074,No archive found
+https://api.weatherbit.io,api,0.0,1.0,0.0,2025-08-13T17:46:43.005352,
+https://maps.googleapis.com,api,,,,2025-08-13T17:47:30.577809,No archive found
+https://api.mapbox.com,api,0.0,1.0,0.0,2025-08-13T17:47:35.373472,
+https://api.here.com,api,,,,2025-08-13T17:48:24.864610,No archive found
+https://api.tomtom.com,api,,,,2025-08-13T17:49:01.638785,No archive found
+https://api.openstreetmap.org,api,0.0,1.0,0.0,2025-08-13T17:49:04.109466,
+https://api.bing.com/maps,api,,,,2025-08-13T17:50:33.392056,No archive found
+https://api.arcgis.com,api,,,,2025-08-13T17:51:03.966804,No archive found
+https://api.mapquest.com,api,,,,2025-08-13T17:51:22.531127,No archive found
+https://api.opencagedata.com,api,0.0,1.0,0.0,2025-08-13T17:51:49.738535,
+https://api.geoapify.com,api,,,,2025-08-13T17:52:14.598237,No archive found
+https://api.nasa.gov,api,0.4444444444444445,1.8,0.8,2025-08-13T17:52:19.359497,
+https://api.spacex.com,api,,,,2025-08-13T17:53:45.317463,No archive found
+https://api.esa.int,api,1.0,1.0,1.0,2025-08-13T17:53:47.784902,
+https://api.isro.gov.in,api,,,,2025-08-13T17:54:24.846526,No archive found
+https://api.jaxa.jp,api,,,,2025-08-13T17:54:50.037978,No archive found
+https://api.n2yo.com,api,,,,2025-08-13T17:55:21.176877,No archive found
+https://api.astronomyapi.com,api,,,,2025-08-13T17:55:46.333502,No archive found
+https://api.ipgeolocation.io,api,,,,2025-08-13T17:56:17.492842,No archive found
+https://api.wheretheiss.at,api,,,,2025-08-13T17:56:42.730942,No archive found
+https://api.launch.report,api,,,,2025-08-13T17:57:16.956107,No archive found
+https://newsapi.org,api,0.8113207547169812,5.3,4.3,2025-08-13T17:57:23.351033,
+https://api.nytimes.com,api,,,,2025-08-13T17:58:41.193222,Likely excluded via robots
+https://api.theguardian.com,api,,,,2025-08-13T17:58:43.339187,Likely excluded via robots
+https://api.reuters.com,api,,,,2025-08-13T17:59:20.467870,Likely excluded via robots
+https://api.bloomberg.com,api,,,,2025-08-13T17:59:50.570601,Likely excluded via robots
+https://api.wsj.com,api,,,,2025-08-13T18:00:22.451041,Likely excluded via robots
+https://api.ft.com,api,,,,2025-08-13T18:00:53.750420,Likely excluded via robots
+https://api.economist.com,api,,,,2025-08-13T18:01:25.078270,Likely excluded via robots
+https://api.bbc.com,api,,,,2025-08-13T18:01:53.745000,No archive found
+https://api.cnn.com,api,0.010186757215619697,58.899999999999984,0.6,2025-08-13T18:02:08.952174,
+https://api.coindesk.com,api,,,,2025-08-13T18:02:55.131111,No archive found
+https://api.coingecko.com,api,,,,2025-08-13T18:03:11.901794,No archive found
+https://api.coinmarketcap.com,api,0.0,1.0,0.0,2025-08-13T18:03:34.416179,
+https://api.binance.com,api,,,,2025-08-13T18:04:25.585268,No archive found
+https://api.coinbase.com,api,,,,2025-08-13T18:04:51.495864,No archive found
+https://api.kraken.com,api,,,,2025-08-13T18:05:38.591116,No archive found
+https://api.bitfinex.com,api,,,,2025-08-13T18:06:28.211000,No archive found
+https://api.poloniex.com,api,,,,2025-08-13T18:07:14.701796,No archive found
+https://api.gemini.com,api,,,,2025-08-13T18:07:56.012693,No archive found
+https://api.crypto.com,api,,,,2025-08-13T18:08:27.233747,No archive found
+https://api.etherscan.io,api,,,,2025-08-13T18:09:01.787629,No archive found
+https://api.blockchain.info,api,,,,2025-08-13T18:09:38.734478,No archive found
+https://api.blockcypher.com,api,,,,2025-08-13T18:10:00.490936,No archive found
+https://api.chainlink.com,api,,,,2025-08-13T18:10:35.152398,No archive found
+https://api.infura.io,api,,,,2025-08-13T18:10:56.782856,No archive found
+https://api.alchemy.com,api,,,,2025-08-13T18:11:34.506400,No archive found
+https://api.moralis.io,api,,,,2025-08-13T18:12:09.392352,No archive found
+https://api.quicknode.com,api,,,,2025-08-13T18:12:37.549458,No archive found
+https://api.thegraph.com,api,,,,2025-08-13T18:13:11.676745,No archive found
+https://api.covalenthq.com,api,,,,2025-08-13T18:13:27.547869,No archive found
+https://api.twilio.com,api,,,,2025-08-13T18:13:31.049280,No archive found
+https://api.sendgrid.com,api,,,,2025-08-13T18:13:53.245819,No archive found
+https://api.mailgun.com,api,,,,2025-08-13T18:14:21.927334,No archive found
+https://api.sparkpost.com,api,0.0,1.0,0.0,2025-08-13T18:14:51.994232,
+https://api.sendinblue.com,api,0.6153846153846154,2.6,1.6,2025-08-13T18:15:24.217399,
+https://api.mailchimp.com,api,,,,2025-08-13T18:16:06.069773,No archive found
+https://api.constantcontact.com,api,,,,2025-08-13T18:16:40.956313,No archive found
+https://api.getresponse.com,api,,,,2025-08-13T18:17:03.508718,No archive found
+https://api.aweber.com,api,1.0,1.0,1.0,2025-08-13T18:17:12.261593,
+https://api.campaignmonitor.com,api,0.0,1.0,0.0,2025-08-13T18:17:29.172583,
+https://api.hubspot.com,api,0.0,1.0,0.0,2025-08-13T18:18:11.416194,
+https://api.salesforce.com,api,,,,2025-08-13T18:18:48.686974,No archive found
+https://api.pipedrive.com,api,,,,2025-08-13T18:19:19.853970,No archive found
+https://api.zoho.com,api,,,,2025-08-13T18:19:44.494927,No archive found
+https://api.freshworks.com,api,0.0,1.0,0.0,2025-08-13T18:19:52.182282,
+https://api.copper.com,api,,,,2025-08-13T18:20:39.342588,No archive found
+https://api.insightly.com,api,,,,2025-08-13T18:20:58.674036,No archive found
+https://api.nutshell.com,api,,,,2025-08-13T18:21:22.383542,No archive found
+https://api.agilecrm.com,api,,,,2025-08-13T18:21:51.123536,No archive found
+https://api.sugarcrm.com,api,,,,2025-08-13T18:22:30.726343,No archive found
+https://api.airtable.com,api,,,,2025-08-13T18:22:58.841132,No archive found
+https://api.notion.so,api,,,,2025-08-13T18:23:33.114035,No archive found
+https://api.monday.com,api,,,,2025-08-13T18:24:01.235059,No archive found
+https://api.asana.com,api,,,,2025-08-13T18:24:26.284041,No archive found
+https://api.trello.com,api,0.8275862068965517,5.8,4.8,2025-08-13T18:24:37.124813,
+https://api.jira.atlassian.com,api,,,,2025-08-13T18:25:11.228901,No archive found
+https://api.basecamp.com,api,,,,2025-08-13T18:25:28.910062,No archive found
+https://api.clickup.com,api,,,,2025-08-13T18:25:55.700068,No archive found
+https://api.todoist.com,api,,,,2025-08-13T18:26:42.109696,No archive found
+https://api.wunderlist.com,api,0.0,1.0,0.0,2025-08-13T18:26:46.896667,
+https://api.algolia.com,api,,,,2025-08-13T18:27:20.641499,No archive found
+https://api.elasticsearch.com,api,,,,2025-08-13T18:27:42.961877,No archive found
+https://api.meilisearch.com,api,,,,2025-08-13T18:28:17.169459,No archive found
+https://api.typesense.org,api,,,,2025-08-13T18:28:58.184615,No archive found
+https://api.swiftype.com,api,,,,2025-08-13T18:29:19.950215,No archive found
+https://api.searchly.com,api,,,,2025-08-13T18:29:48.961172,No archive found
+https://api.bonsai.io,api,,,,2025-08-13T18:30:22.331446,No archive found
+https://api.websolr.com,api,,,,2025-08-13T18:30:39.791693,No archive found
+https://api.searchbox.io,api,,,,2025-08-13T18:31:05.056486,No archive found
+https://api.facetflow.com,api,,,,2025-08-13T18:31:30.128758,No archive found
+https://api.aws.amazon.com,api,,,,2025-08-13T18:31:58.936390,No archive found
+https://api.cloud.google.com,api,,,,2025-08-13T18:32:26.675717,No archive found
+https://api.azure.microsoft.com,api,,,,2025-08-13T18:32:57.797500,Likely excluded via robots
+https://api.digitalocean.com,api,0.7619047619047619,4.2,3.2,2025-08-13T18:33:08.714493,
+https://api.linode.com,api,,,,2025-08-13T18:34:06.709759,No archive found
+https://api.vultr.com,api,,,,2025-08-13T18:34:47.748512,No archive found
+https://api.ovh.com,api,0.0,1.0,0.0,2025-08-13T18:35:00.362802,
+https://api.hetzner.cloud,api,,,,2025-08-13T18:35:47.500507,No archive found
+https://api.scaleway.com,api,,,,2025-08-13T18:36:21.687399,No archive found
+https://api.upcloud.com,api,,,,2025-08-13T18:36:46.941549,No archive found
+https://api.cloudflare.com,api,0.0,1.0,0.0,2025-08-13T18:37:21.868733,
+https://api.fastly.com,api,,,,2025-08-13T18:38:42.761306,No archive found
+https://api.akamai.com,api,,,,2025-08-13T18:39:17.973857,No archive found
+https://api.bunny.net,api,0.0,1.0,0.0,2025-08-13T18:39:19.695691,
+https://api.stackpath.com,api,0.8360655737704918,6.1,5.1,2025-08-13T18:39:36.753746,
+https://api.keycdn.com,api,,,,2025-08-13T18:40:41.304244,No archive found
+https://api.cdn77.com,api,,,,2025-08-13T18:41:17.441499,No archive found
+https://api.cachefly.com,api,0.9745547073791349,39.3,38.3,2025-08-13T18:41:29.257965,
+https://api.maxcdn.com,api,,,,2025-08-13T18:42:02.397602,No archive found
+https://api.jsdelivr.com,api,,,,2025-08-13T18:42:24.847116,No archive found
+https://api.vercel.com,api,,,,2025-08-13T18:42:44.539003,No archive found
+https://api.netlify.com,api,,,,2025-08-13T18:43:06.854888,No archive found
+https://api.heroku.com,api,,,,2025-08-13T18:43:57.023259,No archive found
+https://api.render.com,api,,,,2025-08-13T18:44:32.667858,No archive found
+https://api.railway.app,api,,,,2025-08-13T18:45:03.849965,No archive found
+https://api.fly.io,api,,,,2025-08-13T18:45:27.466099,No archive found
+https://api.platform.sh,api,,,,2025-08-13T18:45:52.999647,No archive found
+https://api.cloud66.com,api,,,,2025-08-13T18:46:26.719628,No archive found
+https://api.engineyard.com,api,,,,2025-08-13T18:46:51.287762,No archive found
+https://api.pantheon.io,api,,,,2025-08-13T18:47:26.004390,No archive found
+https://api.mongodb.com,api,,,,2025-08-13T18:48:00.708429,No archive found
+https://api.postgresql.org,api,,,,2025-08-13T18:48:28.884250,No archive found
+https://api.mysql.com,api,,,,2025-08-13T18:49:15.143052,No archive found
+https://api.redis.io,api,,,,2025-08-13T18:49:45.144633,No archive found
+https://api.cassandra.apache.org,api,,,,2025-08-13T18:50:16.821071,No archive found
+https://api.couchdb.apache.org,api,,,,2025-08-13T18:51:00.559704,No archive found
+https://api.neo4j.com,api,,,,2025-08-13T18:51:28.735060,No archive found
+https://api.arangodb.com,api,,,,2025-08-13T18:51:56.834388,No archive found
+https://api.influxdata.com,api,,,,2025-08-13T18:52:22.022848,No archive found
+https://api.timescale.com,api,,,,2025-08-13T18:53:02.168684,No archive found
+https://api.fauna.com,api,,,,2025-08-13T18:53:38.946140,No archive found
+https://api.supabase.io,api,,,,2025-08-13T18:54:03.940813,No archive found
+https://api.firebase.google.com,api,,,,2025-08-13T18:54:47.658755,No archive found
+https://api.appwrite.io,api,,,,2025-08-13T18:55:22.050723,No archive found
+https://api.nhost.io,api,,,,2025-08-13T18:55:56.726686,No archive found
+https://api.hasura.io,api,,,,2025-08-13T18:56:25.029944,No archive found
+https://api.prisma.io,api,,,,2025-08-13T18:57:02.885677,No archive found
+https://api.planetscale.com,api,0.0,1.0,0.0,2025-08-13T18:57:32.685127,
+https://api.cockroachlabs.com,api,,,,2025-08-13T18:58:44.292205,No archive found
+https://api.yugabyte.com,api,,,,2025-08-13T18:59:24.552663,No archive found
+https://jsonplaceholder.typicode.com,api,,,,2025-08-13T19:00:10.218705,No archive found
+https://reqres.in/api,api,,,,2025-08-13T19:00:44.371520,No archive found
+https://fakestoreapi.com,api,0.6153846153846154,2.6,1.6,2025-08-13T19:01:06.862959,
+https://dummyjson.com,api,,,,2025-08-13T19:02:26.780494,No archive found
+https://jsonbin.io/api,api,,,,2025-08-13T19:02:58.003968,No archive found
+https://mockapi.io,api,,,,2025-08-13T19:03:26.114299,No archive found
+https://restcountries.com/v3.1,api,,,,2025-08-13T19:03:50.162208,No archive found
+https://pokeapi.co/api,api,,,,2025-08-13T19:04:18.296697,No archive found
+https://swapi.dev/api,api,0.0,1.0,0.0,2025-08-13T19:04:34.872289,
+https://rickandmortyapi.com/api,api,,,,2025-08-13T19:05:13.552783,No archive found
+https://api.chucknorris.io,api,,,,2025-08-13T19:05:47.826628,No archive found
+https://api.jokes.one,api,,,,2025-08-13T19:06:25.506233,No archive found
+https://api.quotable.io,api,,,,2025-08-13T19:06:50.657139,No archive found
+https://api.adviceslip.com,api,0.4444444444444445,1.8,0.8,2025-08-13T19:06:58.580464,
+https://api.kanye.rest,api,,,,2025-08-13T19:08:12.442229,No archive found
+https://api.thecatapi.com,api,,,,2025-08-13T19:09:04.616918,No archive found
+https://api.thedogapi.com,api,,,,2025-08-13T19:09:47.541042,No archive found
+https://api.randomuser.me,api,,,,2025-08-13T19:10:27.638130,No archive found
+https://api.genderize.io,api,,,,2025-08-13T19:11:01.849053,No archive found
+https://api.agify.io,api,,,,2025-08-13T19:11:25.123766,No archive found
+https://api.nationalize.io,api,,,,2025-08-13T19:11:59.255741,No archive found
+https://api.ipify.org,api,,,,2025-08-13T19:12:30.411954,No archive found
+https://api.ipapi.com,api,,,,2025-08-13T19:12:53.290354,No archive found
+https://api.ipstack.com,api,,,,2025-08-13T19:13:16.698653,No archive found
+https://api.ipdata.co,api,,,,2025-08-13T19:13:54.192449,No archive found
+https://api.currencyapi.com,api,,,,2025-08-13T19:14:30.483405,No archive found
+https://api.exchangerate-api.com,api,,,,2025-08-13T19:14:50.261583,No archive found
+https://api.fixer.io,api,0.6296296296296297,2.7,1.7000000000000002,2025-08-13T19:15:11.664251,
+https://api.openexchangerates.org,api,,,,2025-08-13T19:16:22.390955,No archive found
+https://api.currencylayer.com,api,,,,2025-08-13T19:16:47.503651,No archive found
+https://api.unsplash.com,api,,,,2025-08-13T19:17:24.900028,No archive found
+https://api.pexels.com,api,,,,2025-08-13T19:18:05.288157,No archive found
+https://api.pixabay.com,api,,,,2025-08-13T19:18:33.568341,No archive found
+https://api.giphy.com,api,0.7142857142857143,3.5,2.5,2025-08-13T19:19:04.738164,
+https://api.tenor.com,api,,,,2025-08-13T19:20:03.082660,No archive found
+https://api.imgur.com,api,,,,2025-08-13T19:20:37.213993,No archive found
+https://api.cloudinary.com,api,,,,2025-08-13T19:20:48.862578,No archive found
+https://api.uploadcare.com,api,,,,2025-08-13T19:21:14.082587,No archive found
+https://api.filestack.com,api,,,,2025-08-13T19:21:53.343885,No archive found
+https://api.imagekit.io,api,,,,2025-08-13T19:22:15.886757,No archive found
+https://api.deepai.org,api,,,,2025-08-13T19:22:41.784866,No archive found
+https://api.openai.com,api,,,,2025-08-13T19:23:20.060457,No archive found
+https://api.anthropic.com,api,,,,2025-08-13T19:23:57.272425,No archive found
+https://api.cohere.ai,api,,,,2025-08-13T19:24:37.834533,No archive found
+https://api.huggingface.co,api,,,,2025-08-13T19:25:06.090473,No archive found
+https://api.replicate.com,api,,,,2025-08-13T19:25:37.727303,No archive found
+https://api.stability.ai,api,,,,2025-08-13T19:26:06.649814,No archive found
+https://api.midjourney.com,api,,,,2025-08-13T19:26:40.382865,No archive found
+https://api.leonardo.ai,api,,,,2025-08-13T19:27:14.489293,No archive found
+https://api.runwayml.com,api,,,,2025-08-13T19:27:37.807531,No archive found
+https://facebook.com,social,,,,2025-08-13T19:28:09.272213,No archive found
+https://twitter.com,social,0.0,1.0,0.0,2025-08-13T19:28:47.220716,
+https://instagram.com,social,,,,2025-08-13T19:30:01.307171,No archive found
+https://linkedin.com,social,0.75,4.0,3.0,2025-08-13T19:30:24.592045,
+https://youtube.com,social,,,,2025-08-13T19:31:14.358509,No archive found
+https://tiktok.com,social,0.9864498644986449,73.79999999999987,72.79999999999987,2025-08-13T19:31:18.938101,
+https://snapchat.com,social,0.9375,16.000000000000007,15.000000000000007,2025-08-13T19:31:53.210237,
+https://pinterest.com,social,,,,2025-08-13T19:32:49.132971,No archive found
+https://reddit.com,social,,,,2025-08-13T19:33:17.501031,No archive found
+https://tumblr.com,social,0.9733333333333335,37.5,36.50000000000001,2025-08-13T19:33:28.810972,
+https://whatsapp.com,social,,,,2025-08-13T19:34:14.561093,No archive found
+https://messenger.com,social,,,,2025-08-13T19:34:45.853832,No archive found
+https://telegram.org,social,0.5,2.0,1.0,2025-08-13T19:35:14.951520,
+https://wechat.com,social,0.8181818181818182,5.5,4.5,2025-08-13T19:36:13.152782,
+https://line.me,social,0.7727272727272729,4.3999999999999995,3.4000000000000004,2025-08-13T19:36:32.398421,
+https://viber.com,social,0.4444444444444445,1.8,0.8,2025-08-13T19:37:07.962632,
+https://signal.org,social,,,,2025-08-13T19:37:59.652042,No archive found
+https://kik.com,social,0.0,1.0,0.0,2025-08-13T19:38:02.510091,
+https://discord.com,social,0.990234375,102.39999999999996,101.39999999999996,2025-08-13T19:39:17.309421,
+https://slack.com,social,,,,2025-08-13T19:40:24.771216,No archive found
+https://vk.com,social,0.979381443298969,48.49999999999996,47.49999999999996,2025-08-13T19:40:35.581688,
+https://ok.ru,social,1.0,1.0,1.0,2025-08-13T19:41:33.664898,
+https://weibo.com,social,,,,2025-08-13T19:42:13.298797,No archive found
+https://qzone.qq.com,social,0.052173913043478265,11.499999999999998,0.6,2025-08-13T19:42:21.836890,
+https://douyin.com,social,,,,2025-08-13T19:43:16.268559,No archive found
+https://xiaohongshu.com,social,0.7619047619047619,4.2,3.2,2025-08-13T19:43:21.250171,
+https://zhihu.com,social,,,,2025-08-13T19:44:27.242829,No archive found
+https://bilibili.com,social,,,,2025-08-13T19:44:52.338776,No archive found
+https://kuaishou.com,social,0.0,1.0,0.0,2025-08-13T19:45:07.710694,
+https://meipai.com,social,,,,2025-08-13T19:45:55.790371,No archive found
+https://meetup.com,social,0.9541284403669725,21.8,20.8,2025-08-13T19:46:25.144450,
+https://nextdoor.com,social,,,,2025-08-13T19:47:42.494339,No archive found
+https://alignable.com,social,0.9653979238754326,28.900000000000006,27.900000000000006,2025-08-13T19:48:16.220818,
+https://band.us,social,,,,2025-08-13T19:49:04.890258,No archive found
+https://caffeine.tv,social,,,,2025-08-13T19:49:29.514005,No archive found
+https://clubhouse.com,social,0.9212598425196851,12.700000000000001,11.700000000000001,2025-08-13T19:49:43.709987,
+https://houseparty.com,social,0.4444444444444445,1.8,0.8,2025-08-13T19:50:20.100100,
+https://marco-polo.me,social,,,,2025-08-13T19:51:14.124395,No archive found
+https://peanut-app.io,social,0.875,8.0,7.0,2025-08-13T19:51:30.559588,
+https://yubo.live,social,,,,2025-08-13T19:52:16.166749,No archive found
+https://behance.net,social,0.9827586206896551,58.0,57.0,2025-08-13T19:52:27.290283,
+https://dribbble.com,social,0.9847094801223242,65.39999999999996,64.39999999999996,2025-08-13T19:53:00.832307,
+https://deviantart.com,social,0.9796747967479674,49.199999999999996,48.199999999999996,2025-08-13T19:53:29.297789,
+https://artstation.com,social,0.966996699669967,30.299999999999976,29.29999999999998,2025-08-13T19:53:56.468978,
+https://500px.com,social,,,,2025-08-13T19:54:58.276209,No archive found
+https://flickr.com,social,0.9646643109540636,28.300000000000004,27.300000000000004,2025-08-13T19:55:15.149685,
+https://vsco.co,social,0.9875930521091811,80.59999999999998,79.59999999999998,2025-08-13T19:56:06.046834,
+https://ello.co,social,0.6774193548387097,3.0999999999999996,2.1,2025-08-13T19:56:30.445521,
+https://vero.co,social,,,,2025-08-13T19:57:25.553262,No archive found
+https://mastodon.social,social,0.4736842105263158,1.9,0.9,2025-08-13T19:57:36.917533,
+https://diaspora.foundation,social,,,,2025-08-13T19:58:31.462790,No archive found
+https://minds.com,social,0.8529411764705882,6.8,5.8,2025-08-13T19:58:35.380941,
+https://gab.com,social,0.4444444444444445,1.8,0.8,2025-08-13T19:59:06.285845,
+https://parler.com,social,,,,2025-08-13T20:00:08.182217,No archive found
+https://truthsocial.com,social,0.0,1.0,0.0,2025-08-13T20:00:31.371924,
+https://gettr.com,social,,,,2025-08-13T20:01:48.707319,No archive found
+https://mewe.com,social,0.8461538461538463,6.499999999999999,5.5,2025-08-13T20:01:56.618870,
+https://rumble.com,social,0.9944320712694877,179.60000000000008,178.60000000000008,2025-08-13T20:02:55.661180,
+https://bitchute.com,social,1.0,1.0,1.0,2025-08-13T20:03:42.742080,
+https://odysee.com,social,,,,2025-08-13T20:04:32.442450,No archive found
+https://goodreads.com,social,0.9766899766899767,42.9,41.9,2025-08-13T20:04:55.311886,
+https://wattpad.com,social,,,,2025-08-13T20:05:13.530965,No archive found
+https://medium.com,social,0.8936170212765956,9.4,8.399999999999999,2025-08-13T20:05:18.926586,
+https://substack.com,social,0.9914089347079038,116.39999999999968,115.39999999999968,2025-08-13T20:05:48.953415,
+https://ghost.org,social,,,,2025-08-13T20:06:31.736191,No archive found
+https://hashnode.com,social,,,,2025-08-13T20:07:00.471483,No archive found
+https://dev.to,social,0.9900695134061569,100.69999999999997,99.69999999999997,2025-08-13T20:07:03.285017,
+https://hackernoon.com,social,0.9585062240663902,24.09999999999998,23.099999999999984,2025-08-13T20:07:21.499086,
+https://producthunt.com,social,,,,2025-08-13T20:08:38.678292,No archive found
+https://angellist.com,social,0.8412698412698414,6.299999999999999,5.3,2025-08-13T20:09:06.409895,
+https://github.com/explore,social,0.9785867237687366,46.7,45.7,2025-08-13T20:09:58.688843,
+https://gitlab.com/explore,social,0.0,1.0,0.0,2025-08-13T20:10:28.700368,
+https://stackoverflow.com,social,,,,2025-08-13T20:11:40.801435,No archive found
+https://stackexchange.com,social,0.972972972972973,37.0,36.0,2025-08-13T20:11:42.920244,
+https://quora.com,social,,,,2025-08-13T20:12:15.851932,No archive found
+https://answers.yahoo.com,social,0.8571428571428571,7.0,6.0,2025-08-13T20:12:49.262164,
+https://askfm.com,social,0.0,1.0,0.0,2025-08-13T20:13:24.226990,
+https://curiouscat.me,social,0.37499999999999994,1.6,0.6,2025-08-13T20:13:34.737032,
+https://retrospring.net,social,0.0,1.0,0.0,2025-08-13T20:13:57.064111,
+https://tellonym.me,social,0.8305084745762712,5.9,4.9,2025-08-13T20:14:19.975153,
+https://twitch.tv,social,0.9765807962529274,42.69999999999998,41.69999999999998,2025-08-13T20:14:34.463996,
+https://kick.com,social,0.4444444444444445,1.8,0.8,2025-08-13T20:14:57.992661,
+https://dlive.tv,social,0.9950149551345964,200.60000000000088,199.6000000000009,2025-08-13T20:15:39.854748,
+https://trovo.live,social,0.9827288428324698,57.89999999999995,56.89999999999995,2025-08-13T20:16:21.909979,
+https://younow.com,social,0.9186991869918699,12.300000000000002,11.300000000000002,2025-08-13T20:16:37.516396,
+https://bigo.tv,social,0.6153846153846154,2.6,1.6,2025-08-13T20:16:59.459037,
+https://liveme.com,social,0.8591549295774648,7.1,6.1,2025-08-13T20:17:39.589783,
+https://periscope.tv,social,,,,2025-08-13T20:18:45.156965,No archive found
+https://facebook.com/gaming,social,,,,2025-08-13T20:19:13.243473,No archive found
+https://youtube.com/gaming,social,0.9212598425196851,12.700000000000001,11.700000000000001,2025-08-13T20:19:28.851345,
+https://mixer.com,social,0.0,1.0,0.0,2025-08-13T20:20:16.845098,
+https://steam.community.com,social,0.4444444444444445,1.8,0.8,2025-08-13T20:20:53.221318,
+https://epicgames.com/community,social,,,,2025-08-13T20:21:25.364841,No archive found
+https://xbox.com/community,social,0.75,4.0,3.0,2025-08-13T20:21:45.973507,
+https://playstation.com/community,social,,,,2025-08-13T20:23:20.781014,No archive found
+https://nintendo.com/community,social,1.0,1.0,1.0,2025-08-13T20:23:36.632072,
+https://roblox.com,social,0.9906367041198502,106.79999999999974,105.79999999999974,2025-08-13T20:24:12.029010,
+https://minecraft.net/community,social,0.6153846153846154,2.6,1.6,2025-08-13T20:25:17.488335,
+https://fortnite.com/community,social,,,,2025-08-13T20:26:45.832004,No archive found
+https://leagueoflegends.com/community,social,,,,2025-08-13T20:27:11.109371,No archive found
+https://last.fm,social,0.6153846153846154,2.6,1.6,2025-08-13T20:27:19.200057,
+https://soundcloud.com,social,0.9206349206349207,12.600000000000003,11.600000000000003,2025-08-13T20:28:12.853892,
+https://bandcamp.com,social,0.8823529411764705,8.5,7.499999999999999,2025-08-13T20:28:55.322550,
+https://reverbnation.com,social,,,,2025-08-13T20:29:36.953332,No archive found
+https://datpiff.com,social,0.6296296296296297,2.7,1.7000000000000002,2025-08-13T20:29:44.299646,
+https://mixcloud.com,social,0.4444444444444445,1.8,0.8,2025-08-13T20:30:29.014110,
+https://audiomack.com,social,,,,2025-08-13T20:31:30.169452,No archive found
+https://beatport.com,social,,,,2025-08-13T20:32:13.282179,No archive found
+https://discogs.com,social,0.9751861042183623,40.3,39.3,2025-08-13T20:32:46.337277,
+https://genius.com,social,,,,2025-08-13T20:33:33.604560,No archive found
+https://vimeo.com,social,0.9806949806949807,51.80000000000001,50.80000000000001,2025-08-13T20:33:43.871387,
+https://dailymotion.com,social,,,,2025-08-13T20:34:26.562772,No archive found
+https://metacafe.com,social,0.9137931034482757,11.600000000000003,10.600000000000001,2025-08-13T20:34:40.694846,
+https://veoh.com,social,,,,2025-08-13T20:36:11.533374,No archive found
+https://break.com,social,0.0,1.0,0.0,2025-08-13T20:36:23.178037,
+https://liveleak.com,social,,,,2025-08-13T20:37:11.497431,No archive found
+https://worldstarhiphop.com,social,,,,2025-08-13T20:37:22.809276,No archive found
+https://vine.co,social,,,,2025-08-13T20:38:06.295851,No archive found
+https://byte.co,social,0.803921568627451,5.1,4.1,2025-08-13T20:38:21.525799,
+https://coub.com,social,0.9459459459459459,18.5,17.5,2025-08-13T20:38:55.686608,
+https://match.com,social,0.0,1.0,0.0,2025-08-13T20:39:18.752912,
+https://tinder.com,social,,,,2025-08-13T20:40:40.116221,No archive found
+https://bumble.com,social,0.6153846153846154,2.6,1.6,2025-08-13T20:40:56.283229,
+https://hinge.co,social,0.782608695652174,4.6,3.6,2025-08-13T20:41:48.718246,
+https://okcupid.com,social,0.9300699300699301,14.300000000000008,13.300000000000008,2025-08-13T20:42:40.185546,
+https://plentyoffish.com,social,0.9342105263157895,15.200000000000003,14.200000000000003,2025-08-13T20:43:37.142365,
+https://eharmony.com,social,0.924812030075188,13.3,12.3,2025-08-13T20:44:14.862463,
+https://zoosk.com,social,0.9038461538461539,10.4,9.4,2025-08-13T20:45:11.852912,
+https://badoo.com,social,,,,2025-08-13T20:46:01.413396,No archive found
+https://happn.com,social,0.9892008639308856,92.59999999999994,91.59999999999994,2025-08-13T20:46:05.923120,
+https://coffee-meets-bagel.com,social,0.9300699300699301,14.3,13.3,2025-08-13T20:46:40.727538,
+https://her.com,social,0.9371069182389937,15.900000000000006,14.900000000000006,2025-08-13T20:46:51.023672,
+https://grindr.com,social,,,,2025-08-13T20:47:27.384769,No archive found
+https://feeld.co,social,1.0,1.0,1.0,2025-08-13T20:47:37.410737,
+https://raya.app,social,,,,2025-08-13T20:48:05.296194,No archive found
+https://the-league.com,social,0.5833333333333334,2.4,1.4,2025-08-13T20:48:21.174370,
+https://elitesingles.com,social,0.6551724137931033,2.9000000000000004,1.9,2025-08-13T20:48:40.729269,
+https://silversingles.com,social,,,,2025-08-13T20:50:01.268809,No archive found
+https://ourtime.com,social,,,,2025-08-13T20:50:42.039342,No archive found
+https://christianmingle.com,social,,,,2025-08-13T20:51:10.264568,No archive found
+https://jdate.com,social,,,,2025-08-13T20:51:59.540062,No archive found
+https://farmersonly.com,social,0.4444444444444445,1.8,0.8,2025-08-13T20:52:22.231028,
+https://uniformdating.com,social,,,,2025-08-13T20:53:24.811623,No archive found
+https://millionairematch.com,social,0.5,2.0,1.0,2025-08-13T20:53:50.447080,
+https://seeking.com,social,,,,2025-08-13T20:54:31.426383,No archive found
+https://sugardaddy.com,social,0.966996699669967,30.299999999999997,29.299999999999997,2025-08-13T20:54:39.345196,
+https://ashleymadison.com,social,,,,2025-08-13T20:55:33.162017,No archive found
+https://adultfriendfinder.com,social,,,,2025-08-13T20:55:55.264167,No archive found
+https://friendfinder.com,social,1.0,1.0,1.0,2025-08-13T20:55:57.010693,
+https://meetme.com,social,0.0,1.0,0.0,2025-08-13T20:56:11.348948,
+https://tagged.com,social,,,,2025-08-13T20:57:09.524621,No archive found
+https://hi5.com,social,,,,2025-08-13T20:57:50.178500,No archive found
+https://myspace.com,social,0.984375,63.999999999999986,62.999999999999986,2025-08-13T20:58:02.821629,
+https://friendster.com,social,0.7142857142857143,3.5,2.5,2025-08-13T20:58:28.582766,
+https://orkut.com,social,0.0,1.0,0.0,2025-08-13T20:59:15.164087,
+https://bebo.com,social,0.9130434782608695,11.5,10.5,2025-08-13T20:59:41.917271,
+https://foursquare.com,social,,,,2025-08-13T21:00:28.543829,No archive found
+https://swarmapp.com,social,,,,2025-08-13T21:01:02.847966,No archive found
+https://yelp.com,social,1.0,1.0,1.0,2025-08-13T21:01:28.056136,
+https://tripadvisor.com,social,0.9799599198396793,49.900000000000006,48.900000000000006,2025-08-13T21:02:25.233015,
+https://strava.com,social,0.974293059125964,38.900000000000006,37.900000000000006,2025-08-13T21:03:00.497192,
+https://fitbit.com/community,social,0.9740259740259742,38.49999999999998,37.499999999999986,2025-08-13T21:03:44.206482,
+https://myfitnesspal.com/community,social,,,,2025-08-13T21:04:31.271767,No archive found
+https://nike.com/nrc,social,,,,2025-08-13T21:05:00.753694,No archive found
+https://adidas.com/runtastic,social,,,,2025-08-13T21:05:37.007734,No archive found
+https://garmin.com/connect,social,,,,2025-08-13T21:06:17.275862,No archive found
+https://polar.com/flow,social,0.864864864864865,7.3999999999999995,6.4,2025-08-13T21:06:19.177904,
+https://zwift.com,social,0.9850523168908819,66.8999999999999,65.8999999999999,2025-08-13T21:07:28.020200,
+https://peloton.com/community,social,,,,2025-08-13T21:08:32.233617,No archive found
+https://dailyburn.com,social,0.8305084745762712,5.8999999999999995,4.8999999999999995,2025-08-13T21:08:50.602399,
+https://chess.com,social,1.0,1.0,1.0,2025-08-13T21:09:51.515265,
+https://lichess.org,social,,,,2025-08-13T21:10:46.960499,No archive found
+https://chess24.com,social,,,,2025-08-13T21:11:27.322090,No archive found
+https://playchess.com,social,0.4444444444444445,1.8,0.8,2025-08-13T21:11:55.837821,
+https://chesscube.com,social,,,,2025-08-13T21:13:15.177722,No archive found
+https://gameknot.com,social,,,,2025-08-13T21:13:43.270079,No archive found
+https://red-dragon-gaming.com,social,,,,2025-08-13T21:14:00.360813,No archive found
+https://boardgamearena.com,social,,,,2025-08-13T21:14:25.569796,No archive found
+https://tabletopia.com,social,0.9884526558891455,86.6,85.6,2025-08-13T21:14:50.067910,
+https://tabletopsimulator.com,social,,,,2025-08-13T21:15:58.352102,No archive found
+https://untappd.com,social,1.0,1.0,1.0,2025-08-13T21:16:23.933960,
+https://vivino.com,social,,,,2025-08-13T21:17:13.415452,No archive found
+https://distiller.com,social,0.9310344827586206,14.500000000000002,13.5,2025-08-13T21:17:28.133511,
+https://beeradvocate.com,social,0.9700598802395209,33.399999999999956,32.399999999999956,2025-08-13T21:18:01.113608,
+https://ratebeer.com,social,,,,2025-08-13T21:18:42.200324,No archive found
+https://cellartracker.com,social,,,,2025-08-13T21:19:10.387888,No archive found
+https://whiskybase.com,social,0.9337748344370861,15.100000000000005,14.100000000000005,2025-08-13T21:19:29.876892,
+https://cigarsocial.com,social,1.0,1.0,1.0,2025-08-13T21:19:51.206833,
+https://leafly.com,social,0.9647887323943662,28.400000000000013,27.400000000000013,2025-08-13T21:20:10.833353,
+https://weedmaps.com,social,0.9885321100917431,87.2,86.2,2025-08-13T21:20:50.157516,
+https://allrecipes.com/community,social,0.9607843137254902,25.5,24.5,2025-08-13T21:21:30.518563,
+https://food52.com,social,0.9354838709677419,15.5,14.5,2025-08-13T21:22:07.661955,
+https://epicurious.com/community,social,,,,2025-08-13T21:23:27.609491,No archive found
+https://yummly.com,social,,,,2025-08-13T21:24:16.362773,No archive found
+https://cookpad.com,social,0.979253112033195,48.19999999999999,47.19999999999999,2025-08-13T21:24:43.286198,
+https://kitchen-stories.com,social,,,,2025-08-13T21:25:27.302087,No archive found
+https://bigoven.com,social,,,,2025-08-13T21:25:59.240149,No archive found
+https://supercook.com,social,,,,2025-08-13T21:26:46.621430,No archive found
+https://foodgawker.com,social,0.9743589743589743,42.90000000000001,41.80000000000001,2025-08-13T21:26:51.667706,
+https://tastespotting.com,social,0.9528301886792453,21.200000000000003,20.200000000000003,2025-08-13T21:27:33.687098,
+https://imdb.com/community,social,,,,2025-08-13T21:28:35.723186,No archive found
+https://letterboxd.com,social,0.9829642248722317,117.39999999999989,115.39999999999989,2025-08-13T21:28:37.120864,
+https://mubi.com,social,0.96309963099631,27.1,26.1,2025-08-13T21:29:12.117073,
+https://filmaffinity.com,social,0.6153846153846154,2.6,1.6,2025-08-13T21:29:39.196651,
+https://criticker.com,social,,,,2025-08-13T21:30:23.219243,No archive found
+https://icheckmovies.com,social,0.8333333333333335,5.999999999999999,5.0,2025-08-13T21:30:45.218768,
+https://trakt.tv,social,0.6153846153846155,2.5999999999999996,1.6,2025-08-13T21:31:54.325233,
+https://tvtime.com,social,0.6153846153846154,2.6,1.6,2025-08-13T21:33:12.044597,
+https://serializd.com,social,0.9843993759750391,64.09999999999984,63.099999999999845,2025-08-13T21:34:13.134142,
+https://episode-calendar.com,social,,,,2025-08-13T21:35:43.313170,No archive found
+https://houzz.com,social,0.1702127659574468,4.7,0.8,2025-08-13T21:35:56.289317,
+https://homestyler.com,social,1.0,1.0,1.0,2025-08-13T21:37:09.586293,
+https://roomstyler.com,social,0.9371069182389937,15.9,14.9,2025-08-13T21:37:40.432628,
+https://planner5d.com,social,0.9765807962529274,42.7,41.7,2025-08-13T21:38:53.995796,
+https://floorplanner.com,social,,,,2025-08-13T21:39:46.156585,No archive found
+https://homestratosphere.com,social,0.9553571428571427,22.40000000000001,21.400000000000006,2025-08-13T21:40:00.477511,
+https://apartmenttherapy.com,social,1.0,1.0,1.0,2025-08-13T21:40:37.949228,
+https://dezeen.com,social,1.0,1.0,1.0,2025-08-13T21:41:01.735802,
+https://archdaily.com,social,0.9747474747474747,39.6,38.6,2025-08-13T21:41:12.854768,
+https://architizer.com,social,0.93006993006993,14.300000000000006,13.300000000000004,2025-08-13T21:41:28.746332,
+https://etsy.com/community,social,0.8880597014925373,26.800000000000004,23.800000000000004,2025-08-13T21:42:05.705590,
+https://ravelry.com,social,0.9854014598540146,68.5,67.5,2025-08-13T21:43:02.759231,
+https://craftster.org,social,0.9824561403508771,56.99999999999997,55.99999999999997,2025-08-13T21:43:14.732029,
+https://instructables.com,social,0.6153846153846154,2.6,1.6,2025-08-13T21:44:10.739419,
+https://hackaday.io,social,0.9295774647887324,14.200000000000003,13.200000000000003,2025-08-13T21:44:35.000211,
+https://makezine.com,social,1.0,1.0,1.0,2025-08-13T21:44:49.995456,
+https://adafruit.com/community,social,,,,2025-08-13T21:45:30.083585,No archive found
+https://sparkfun.com/community,social,,,,2025-08-13T21:45:57.095759,No archive found
+https://arduino.cc/forum,social,1.0,1.0,1.0,2025-08-13T21:45:59.592315,
+https://raspberrypi.org/forums,social,,,,2025-08-13T21:46:33.995564,No archive found
+https://care2.com,social,0.9728260869565217,36.79999999999999,35.79999999999999,2025-08-13T21:46:35.683609,
+https://change.org,social,0.9852507374631271,67.79999999999987,66.79999999999988,2025-08-13T21:46:49.203983,
+https://avaaz.org,social,0.0,1.0,0.0,2025-08-13T21:47:06.247396,
+https://causes.com,social,0.7297297297297298,3.6999999999999997,2.7,2025-08-13T21:47:21.641350,
+https://globalgiving.org,social,0.49668874172185423,30.200000000000003,15.0,2025-08-13T21:47:51.884959,
+https://justgiving.com,social,,,,2025-08-13T21:48:52.855773,No archive found
+https://gofundme.com,social,0.9632352941176471,27.20000000000001,26.20000000000001,2025-08-13T21:49:04.598497,
+https://kickstarter.com,social,0.9363057324840763,15.700000000000006,14.700000000000005,2025-08-13T21:49:35.730846,
+https://indiegogo.com,social,0.8913043478260869,9.2,8.2,2025-08-13T21:50:09.411996,
+https://patreon.com,social,0.9502487562189055,20.1,19.1,2025-08-13T21:50:27.266579,
+https://buymeacoffee.com,social,1.0,1.0,1.0,2025-08-13T21:51:18.972192,
+https://ko-fi.com,social,0.9685534591194969,31.800000000000004,30.800000000000004,2025-08-13T21:51:55.291223,
+https://liberapay.com,social,0.8765432098765432,8.1,7.1,2025-08-13T21:52:18.072327,
+https://opencollective.com,social,0.9404761904761905,16.8,15.8,2025-08-13T21:52:34.368933,
+https://github.com/sponsors,social,0.9845201238390094,64.59999999999991,63.59999999999992,2025-08-13T21:53:52.328615,
+https://tipeee.com,social,,,,2025-08-13T21:54:42.982968,No archive found
+https://subscribestar.com,social,0.9596774193548387,24.8,23.8,2025-08-13T21:54:44.403324,
+https://onlyfans.com,social,0.9793388429752066,48.39999999999996,47.39999999999996,2025-08-13T21:55:00.609577,
+https://fansly.com,social,0.9773755656108597,44.19999999999991,43.19999999999991,2025-08-13T21:55:13.327137,
+https://fanvue.com,social,0.9691358024691358,32.400000000000006,31.400000000000006,2025-08-13T21:56:15.174576,

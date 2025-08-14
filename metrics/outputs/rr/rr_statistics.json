@@ -1,0 +1,57 @@
+{
+  "overall": {
+    "total_urls": 1000,
+    "successful_replays": 332,
+    "partial_replays": 459,
+    "failed_replays": 0,
+    "average_rr": 0.7151706700379268,
+    "success_rate": 41.97218710493047,
+    "no_archive_count": 185
+  },
+  "by_category": {
+    "html": {
+      "count": 250,
+      "successful": 123,
+      "partial": 119,
+      "failed": 0,
+      "average_rr": 0.8028925619834711,
+      "success_rate": 50.82644628099173,
+      "avg_load_time": 5.5125272559962,
+      "avg_dom_elements": 182.08677685950414,
+      "no_archive_count": 4
+    },
+    "spa": {
+      "count": 250,
+      "successful": 83,
+      "partial": 149,
+      "failed": 0,
+      "average_rr": 0.6741379310344828,
+      "success_rate": 35.775862068965516,
+      "avg_load_time": 5.094407725321889,
+      "avg_dom_elements": 132.15086206896552,
+      "no_archive_count": 12
+    },
+    "social": {
+      "count": 250,
+      "successful": 93,
+      "partial": 138,
+      "failed": 0,
+      "average_rr": 0.699134199134199,
+      "success_rate": 40.25974025974026,
+      "avg_load_time": 8.059061685767666,
+      "avg_dom_elements": 165.0995670995671,
+      "no_archive_count": 6
+    },
+    "api": {
+      "count": 250,
+      "successful": 33,
+      "partial": 53,
+      "failed": 0,
+      "average_rr": 0.6220930232558138,
+      "success_rate": 38.372093023255815,
+      "avg_load_time": 4.4769186046511615,
+      "avg_dom_elements": 389.6744186046512,
+      "no_archive_count": 163
+    }
+  }
+}

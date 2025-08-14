@@ -1,0 +1,30 @@
+{
+  "api": {
+    "avg_bld": 0.2993500833473131,
+    "avg_resources": 15.953488372093023,
+    "avg_failures": 8.593023255813954,
+    "sites_analyzed": 86,
+    "error_rate": 65.6
+  },
+  "html": {
+    "avg_bld": 0.3309907979771177,
+    "avg_resources": 480.62857142857143,
+    "avg_failures": 454.8204081632653,
+    "sites_analyzed": 245,
+    "error_rate": 2.0
+  },
+  "social": {
+    "avg_bld": 0.3419921670550411,
+    "avg_resources": 23.805084745762713,
+    "avg_failures": 11.521186440677965,
+    "sites_analyzed": 236,
+    "error_rate": 5.6
+  },
+  "spa": {
+    "avg_bld": 0.47524006557757614,
+    "avg_resources": 58.85957446808511,
+    "avg_failures": 30.612765957446808,
+    "sites_analyzed": 235,
+    "error_rate": 6.0
+  }
+}
