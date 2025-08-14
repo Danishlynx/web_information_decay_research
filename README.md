@@ -85,10 +85,10 @@ Previous studies focused on individual metrics. This research provides:
 
 | Category | Count | Description | Example Sites |
 |----------|-------|-------------|---------------|
-| **HTML** | 100 | Traditional static websites | Wikipedia, W3.org, BBC News |
-| **SPA** | 100 | Single-Page Applications | Gmail, GitHub, Discord |
-| **Social** | 100 | Social media platforms | Twitter, Facebook, Reddit |
-| **API** | 100 | API-driven dynamic sites | Weather.com, Stock tickers |
+| **HTML** | 250 | Traditional static websites | Wikipedia, W3.org, BBC News |
+| **SPA** | 250 | Single-Page Applications | Gmail, GitHub, Discord |
+| **Social** | 250 | Social media platforms | Twitter, Facebook, Reddit |
+| **API** | 250 | API-driven dynamic sites | Weather.com, Stock tickers |
 
 ### Selection Criteria
 
