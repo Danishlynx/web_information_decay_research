@@ -2,6 +2,7 @@
 Web Archival Quality Assessment Pipeline
 Metric 1: Replayability Ratio (RR)
 Comparative analysis across HTML, SPA, Social Media, and API-based websites
+- Based on Brunelle et al. research
 """
 
 import asyncio

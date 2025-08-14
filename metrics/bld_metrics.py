@@ -2,6 +2,7 @@
 # bld_metrics_robust.py
 """
 Broken Link Density (BLD) Metric — Robust Version
+- Based on Mouchoux et al. (2024), Burtis (2022) research
 - Preserves original logging to file + console
 - Preserves original CSV/graph/JSON outputs
 - Robust Wayback resolution: /available with retries + CDX newest-first fallback
