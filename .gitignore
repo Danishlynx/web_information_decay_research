@@ -9,13 +9,12 @@ env/
 ENV/
 .venv
 
-# Outputs
-outputs/
-*.log
-*.csv
-*.json
-screenshots/
-graphs/
+
+
+# Allow CSV and JSON files inside data/ to be tracked
+!data/
+!data/*.csv
+!data/*.json
 
 # IDE
 .vscode/
