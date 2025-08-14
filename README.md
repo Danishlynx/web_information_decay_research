@@ -809,7 +809,7 @@ This project is licensed under the MIT License:
 ```
 MIT License
 
-Copyright (c) 2025 [Your Name]
+Copyright (c) 2025 Danish Ali
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -856,21 +856,10 @@ SOFTWARE.
 
 ## 📧 Contact Information
 
-**Principal Investigator**: [Your Name]  
-**Email**: your.email@university.edu  
+**Principal Investigator**: Danish Ali  
+**Email**: danihs.ali_2@postgrad.manchester.ac.uk
 **ORCID**: 0000-0000-0000-0000  
-**Institution**: [Your University/Organization]  
-
-**Project Repository**: https://github.com/yourusername/web_information_decay_research  
-**Documentation**: https://web-decay-research.readthedocs.io  
-**Data Repository**: https://doi.org/10.5281/zenodo.xxxxxxx  
-
-### Social Media
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourname)
-- ResearchGate: [Your Profile](https://researchgate.net/profile/yourname)
-
----
+**Institution**: University of Manchester
 
 <div align="center">
 
