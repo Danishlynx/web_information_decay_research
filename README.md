@@ -515,7 +515,7 @@ Digital Preservation Policy:
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/web_information_decay_research.git
+git clone https://github.com/Danishlynx/web_information_decay_research.git
 cd web_information_decay_research
 
 # Create virtual environment
