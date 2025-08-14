@@ -11,7 +11,7 @@ import logging
 import sys
 import requests
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches  # (kept if you use it elsewhere)
+import matplotlib.patches as mpatches  
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
